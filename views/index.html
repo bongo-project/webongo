@@ -1,0 +1,139 @@
+<!DOCTYPE html">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="images/bongo-favicon.ico" type="image/ico">
+    <link rel="icon" href="images/bongo-favicon.png" type="image/png">
+    <title>Bongo</title>
+		<%= stylesheet_link_tag 'interpreter', 'layout', 'widgets', 'login', 'composer', 'conversation', 'contacts', 'calendar', 'summary', 'print'%>
+		<%= javascript_include_tag :defaults %>
+		<% csrf_meta_tag %>
+  </head>
+  <body>
+    <!-- Javascript Warning -->
+    <noscript><div id="no-javascript-warning">
+
+      The Bongo web interface requires a javascript-enabled browser.  If you have
+      turned off javascript in your browser, please turn it back on and reload this
+      page to use Bongo.
+
+    </div></noscript>
+
+
+    <iframe id="history-iframe" style="display: none;"></iframe>
+
+    <!-- Login Pane -->
+    <div id="login-pane" style="display: none;">
+      <div id="login-bg-top"></div>
+      <div id="login-bg-bottom"></div>
+      <h1 id="login-logo">Bongo</h1>
+      <h4 id="login-message">&nbsp;</h4>
+      <table cellpadding="0" cellspacing="6" summary="">
+	  <tr>
+	    <th><label id="login-user-label"></label></th>
+	    <td colspan="2"><input type="text" class="text-entry" id="login-user"></td>
+	  </tr>
+	  <tr>
+	    <th><label id="login-password-label"></label></th>
+	    <td colspan="2"><input type="password" class="text-entry" id="login-password"></td>
+	  </tr>
+	  <tr>
+            <tr>
+	      <th><label id="login-language-label"></label></th>
+	      <td colspan="2">
+		<select id="login-language" style="width: 100%;">
+		  <option value="en">English</option>
+		  <option value="fr">Fran&ccedil;ais</option>
+		</select>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td class="default">
+		<input id="login-default" type="checkbox">
+		<label for="login-default" id="login-default-label"></label>
+	      </td>
+	      <td><input type="button" value="Log In" id="login-button"></td>
+            </tr>
+            <tr>
+	      <td colspan="3">
+	      </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Content Area -->
+    <div id="content" style="display: none">
+      <div id="notification">Notification</div>
+      <table id="page-frame" cellspacing="0" cellpadding="0">
+	  <tr id="page-header">
+	    <td id="logo" class="header-cell">
+	      <span id="user-name"></span>
+	      <ul id="section-user">
+		<li><a href="javascript:void(Dragonfly.logout());">Log Out</a></li>
+		<!-- 
+		Feedback disabled. Check the destination address in Dragonfly.js
+		when re-enabled.
+		<li><a href="javascript:void(Dragonfly.sendFeedback());">Send Feedback</a></li> -->
+	      </ul>
+	    </td>
+	    <td class="header-cell">
+	      <div id="search">
+		<input id="search-entry" type="search" placeholder="Search Bongo" autosave="BongoSearch" results="10">
+		<input type="button" onclick="void(Dragonfly.search ($('search-entry').value))" value="Search">
+		<input type="button" onclick="void(Dragonfly.search (''))" value="Clear">
+	      </div>
+	    </td>
+	    <td class="header-cell" style="text-align:right; padding-right:15px;">
+	      <form id="view-tz">
+	      <label id="tzlabel">Timezone: <span id="tzselect"></span></label>
+          </form>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td id="section-sidebar">
+	      <div id="sidebar-nav">
+		<span class="t"><span class="tr"></span></span>
+		<span class="c"><span class="cr"></span></span>
+		<span class="b"><span class="br"></span></span>
+		<div id="sidebar-tabs-large">
+		  <div class="tab" id="summary-tab"><a id="summary-tab-href" href="#summary" title="Look at an overview of your mail and events"><strong>Summary</strong></a></div>
+
+		  <div class="tab" id="mail-tab"><a id="mail-tab-href" href="#mail" title="Read your mail"><strong>Mail</strong></a></div>
+		  <div class="action"><a href="mailto:">Compose New Mail</a></div>
+		  <div class="tab-spacer"></div>
+
+		  <div class="tab" id="calendar-tab"><a id="calendar-tab-href" href="#calendar" title="View your calendar"><strong>Calendar</strong></a></div>
+		  <div class="action"><a id="new-event-href" href="javascript:void(Dragonfly.Calendar.newEvent())">Create New Event</a></div>
+		</div>
+		<div id="sidebar-tabs-small">
+		  Show: <select id="sidebar-select">
+		    <option value="summary">Summary</option>
+		    <option value="mail">Mail</option>
+		    <option value="calendar">Calendar</option>
+		    <option value="search" id="sidebar-select-search">Search</option>
+		  </select>
+		  <p>
+		    New: <a href="mailto:">Mail</a> | <a href="javascript:void(Dragonfly.Calendar.newEvent())">Event</a>
+		  </p>
+		</div>
+	      </div>
+	      <div id="sidebox-calendar"></div>
+	      <div id="sidebox-sidebook"></div>
+	    </td>
+	    <td id="section-content" colspan="2">
+	      <div id="sourcebar"></div>
+	      <div id="toolbar"></div>
+	      <div id="content-iframe"></div>
+	    </td>
+	  </tr>
+      </table>
+    </div>
+    <div id="extra" style="display: none">
+      <a id="source">Source</a>
+      | <a href="javascript:void(Dragonfly.toggleConsole());">Console</a></li>
+      | <a href="javascript:void(createLoggingPane(true));">Logs</a></li>
+    </div>
+    <form name="webkitKludge"></form>
+  </body>
+</html>
