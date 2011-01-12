@@ -4,9 +4,8 @@
     %link{:href => "images/bongo-favicon.ico", :rel => "icon", :type => "image/ico"}/
     %link{:href => "images/bongo-favicon.png", :rel => "icon", :type => "image/png"}/
     %title Bongo
-    <%= stylesheet_link_tag 'interpreter', 'layout', 'widgets', 'login', 'composer', 'conversation', 'contacts', 'calendar', 'summary', 'print'%>
-    <%= javascript_include_tag :defaults %>
-    <% csrf_meta_tag %>
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/layout.css', :type => "text/css"}
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/login.css', :type => "text/css"}
   %body
     / Javascript Warning
     %noscript
