@@ -1,0 +1,139 @@
+#summary-table { 
+    width: 100%;
+}
+
+td.summary-column { 
+    vertical-align: top;
+    width: 50%;
+}
+
+.summary-category {
+    margin: 1em 1em 2em 1em;
+}
+
+    .summary-category h3 { 
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: normal;
+        font-size: x-small;
+        color: #555;
+        border-bottom: 1px solid #ccc;
+        padding: 1px;
+    }
+
+    /* Generic summary items */
+    .summary-category li { clear: both; }
+
+        .summary-category li a { padding: 0.5em 0.75em; }
+            .summary-category li a:hover { 
+                color: #f50;
+                text-decoration: none; 
+            }
+            .summary-category #frommycontacts-list li a:hover,
+            .summary-category #subscriptions-list li a:hover { 
+                text-decoration: underline; 
+            }
+
+        .summary-category li a span { display: block; }
+        
+        .summary-category li.unread a { 
+            font-weight: bold;
+        }
+
+        /* Stars (and other icons, if they're going to exist) */
+        .summary-category li a img { 
+            float: left;
+            margin-right: 0.5em;
+        }
+
+        /* Truncate multiple-row  events and mail subjects */
+        .summary-category.cal-summary li a span.summary-event,
+        .summary-category li a span.summary-subject {
+            line-height: 1.5em;
+            height: 1.5em;
+            overflow: hidden;
+            position: relative;
+        }
+
+    /* Mail summary items */
+    .summary-category.mail-summary a { 
+        font-size: 85%;
+        display: block;
+    }
+        .summary-category li a span.summary-from {
+            color: #999;
+            font-weight: normal;
+        }
+        .summary-category li.even a span.summary-from {
+            /*
+            color: #8d99a4;
+            */
+        }
+
+        .summary-category li a span.summary-subject {
+            font-size: 120%;
+        }
+        .summary-category li a:hover span.summary-subject {
+            text-decoration: underline;
+        }
+
+        /* Stars, etc. */
+        .summary-category.mail-summary li a img { 
+            margin-bottom: 0.5em;
+        }
+
+    /* Calendar summary items */
+    .summary-category.cal-summary li a {
+        display: block;
+        padding: 0.25em 0.75em;
+        font-size: 85%;
+        clear: both;
+        overflow: auto;
+        text-align: right;
+    }
+        .summary-category.cal-summary #today-list li a span.summary-event {
+            font-weight: bold;
+        }
+        .summary-category.cal-summary li a span.summary-event {
+            font-size: 120%;
+            float: left;
+        }
+        .summary-category.cal-summary li a:hover span.summary-event {
+            text-decoration: underline;
+        }
+
+        .summary-category.cal-summary li a span.summary-day,
+        .summary-category.cal-summary li a span.summary-time {
+            color: #555;
+            display: inline;
+            white-space: nowrap;
+        }
+        .summary-category.cal-summary li a span.summary-day {
+            /*float: right;*/
+        }
+        .summary-category.cal-summary #later-list li a span.summary-time {
+            padding-right: 0.75em;
+            color: #999;
+        }
+
+/*** Icons ***/
+.summary-category h3 {
+    background: transparent url(../images/message-closed-16.png) no-repeat 0 50%;
+    padding-left: 20px;
+    padding-top: 4px;
+}
+.cal-summary h3 {
+    background-image: url(../images/event-16.png);
+}
+
+#summary-cal {
+    margin-top: 1em;
+}
+#summary-cal .date {
+    font-size: 90%;
+    text-decoration: none;
+}
+#summary-cal .date a:hover {
+    color: #f50;
+    text-decoration: underline;
+}

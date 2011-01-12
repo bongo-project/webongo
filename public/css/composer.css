@@ -1,0 +1,121 @@
+.msg-compose {
+    width: 100%;
+    font-size: inherit;
+    padding: 1em;
+}
+
+.msg-compose th {
+    text-align: right;
+    width: 1px;
+    font-weight: normal;
+    vertical-align: top;
+    padding: 0.25em 0.25em 0 0;
+}
+
+.msg-compose .to, .msg-compose .cc, 
+.msg-compose .bcc, .msg-compose .subject, 
+.msg-compose .body, .msg-compose .from { 
+    width: 99%;
+    font-family: inherit;
+    font-size: inherit;
+}
+.msg-compose .from {
+    width: auto;
+    margin-right: 1em;
+}
+.msg-compose td div.text {
+    border: 2px inset #ccc;
+    background-color: #fff;
+    padding: 5px 1px;
+}
+.msg-compose td div.text blink {
+    position: relative;
+    right: 3px;
+}
+option.underline {
+    border-bottom: 1px solid #999;
+    margin-bottom: 2px;
+}
+.msg-compose textarea {
+    min-height: 20em;
+    bottom: 0;
+}
+.msg-compose .toolbar {
+    border: 1px solid #ddd;
+    background-color: #eee;
+    /*
+    */
+    padding: 3px;
+    margin: 0.5em 0 0;
+    overflow: auto;
+}
+.msg-compose .toolbar hr {
+    border: 0;
+    margin: 5px;
+    padding: 0;
+    float: left;
+}
+.icon,
+.icon-plus,
+.icon-minus {
+    width: 16px; height: 16px;
+    background: transparent no-repeat center;
+    vertical-align: middle;
+}
+.icon-plus {
+    background-image: url(../images/plus.png);
+}
+.icon-minus {
+    background-image: url(../images/minus.png);
+}
+
+.msg-compose th.attach .icon,
+.msg-compose .toolbar .icon {
+    border: 1px solid transparent;
+    padding: 2px;
+    display: block;
+    float: left;
+}
+.msg-compose .toolbar .icon.selected {
+    opacity: 0.9;
+    background-color: #d4e0ec;
+    border-color: #c2d2e4;
+}
+.msg-compose .toolbar .icon:hover {
+    opacity: 0.9;
+    background-color: #d4e0ec;
+    border-color: #c2d2e4;
+}
+.msg-compose tr.attach a img {
+    border: 0;
+    text-align: left;
+    vertical-align: middle;
+    margin-right: 1px;
+}
+.msg-compose tr.attach input {
+    width: auto;
+    display: inline;
+}
+
+.space-l {
+    margin-left: 5px;
+}
+.space-r {
+    margin-right: 5px;
+}
+
+.attachment {
+    margin: 0.25em 0;
+    min-height: 1.5em;
+}
+
+.msg-compose tr.action {
+    text-align: right;
+}
+.msg-compose tr.action input {
+    width: auto;
+}
+
+.msg-compose tr.action input {
+    margin-left: 3pt;
+}

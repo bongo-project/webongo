@@ -1,0 +1,163 @@
+#contact-list { 
+  height: 25em;
+  max-height: 25em;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#contact-list a {
+}
+
+#contact-view {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+#contact-view table { 
+  margin: 18px;
+}
+
+#contact-view td {
+    padding: 0 0 3pt 0;
+}
+#contact-view td input {
+    margin-right: 3pt;
+}
+
+td.contact-pic { 
+  text-align: right;
+  vertical-align: middle;
+}
+
+#contact-pic {
+  margin-right: 14px;
+}
+
+#contact-title,
+#contact-company,
+#contact-name {
+  color: #000;
+  margin: 0;
+/*  height: 100%;*/
+}
+
+.contact-field th {
+  text-align: right;
+  color: #999;
+  text-transform: lowercase;
+  min-width: 10em;
+  display: block;
+}
+
+.contact-field .type-label {
+  -moz-border-radius: 25% 0 0 25%;
+  border: 1px solid transparent;
+  padding: 0 12px 0 10px;
+}
+
+#contact-view.editing .semicolon { 
+  visibility: hidden;
+}
+
+#contact-view.editing .type-label {
+    background: transparent url(../images/arrow.png) right no-repeat;
+}
+
+#contact-view.editing .type-label:hover {
+    background: transparent url(../images/arrow.png) right no-repeat;
+    background-color: #e4ebf3;
+    /* color: #f1f5f9; */
+    border-color: #d8e1ed;
+    text-decoration: none;
+    cursor: default;
+}
+
+#contact-view.editing .contact-field.empty input,
+#contact-view.editing .contact-field.empty textarea { 
+  color: #bbb;
+}
+
+#contact-view.editing .contact-field.empty input:focus,
+#contact-view.editing .contact-field.empty textarea:focus { 
+  color: #000;
+}
+
+.contact-field .value { 
+  padding: 2px;
+  /*display: block;*/
+  /*float: left;*/
+}
+
+.contact-field .sub-label { 
+  margin-left: 1em;
+}
+
+/* hidey bits */
+.contact-field input,
+.contact-field textarea,
+.contact-field select,
+#contact-view.editing .contact-field .sub-label,
+#contact-view.editing .contact-field .value { 
+  display: none;
+}
+
+/* showey bits */
+#contact-view.editing .contact-field select,
+#contact-view.editing .contact-field input,
+#contact-view.editing .contact-field textarea {
+  display: inline;
+}
+
+.contact-field input,
+.contact-field textarea {
+  border: 1px solid transparent;
+}
+.contact-field textarea {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-field select,
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border: 1px solid #999;
+    color: #000;
+    background-color: #fff;
+}
+
+.del-field,
+.add-field {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-field.empty {
+  display: none;
+}
+
+#contact-view.editing .contact-field.empty {
+  display: table-row;
+}
+
+#contact-view.editing .contact-field .del-field { 
+  background-image: url(../images/minus.png);
+  visibility: visible;
+}
+
+#contact-view.editing .contact-field .add-field {
+  background-image: url(../images/plus.png);
+  visibility: hidden;
+}
+
+#contact-view.editing .contact-field.empty.only .del-field { 
+  visibility: hidden;
+}
+
+#contact-view.editing .contact-field.filled.last .add-field {
+  visibility: visible;
+}
+
+.contact-field.last td {
+}

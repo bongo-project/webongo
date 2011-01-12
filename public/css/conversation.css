@@ -1,0 +1,394 @@
+/* Conversation navigation */
+.conv-nav { 
+    white-space: nowrap;
+    width: 100%;
+}
+
+    .conv-nav td { vertical-align: middle; }
+
+    .conv-nav a { 
+        padding: 0 1em;
+        font-size: 85%;
+    }
+
+    .conv-nav .prev,
+    .conv-nav .next { text-align: right; }
+
+    .conv-nav input { margin-left: 0.25em; }
+
+    .conv-nav .prev a,
+    .conv-nav .next a { 
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .conv-nav .next a { text-align: right; }
+    .conv-nav .next { position: relative; }
+
+    .eng-webkit .conv-nav input,
+    .eng-webkit .conv-nav select {
+        font-size: 10pt !important;
+    }
+
+/* Conversation */
+#conv-subject {
+    font-family: trebuchet ms, bitstream vera sans, sans-serif;
+    padding: 0;
+    margin: 0.5em 1em 0.5em;
+}
+#conv-msg-list { 
+}
+
+    .msg { 
+        /*
+        margin: 1em;
+        border-top: 1px solid #cadae9;
+        background-color: #d7f6b8;
+        */
+        font-size: 90%;
+        position: relative;
+        margin: 0 1em 12px 64px;
+    }
+
+        .msg .face {
+            display: block;
+            background: transparent url(../images/contact-unknown.png) no-repeat;
+            width: 48px;
+            height: 48px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 1.5em;
+            left: -60px;
+            margin-top: -2px;
+        }
+
+        .eng-msie.engv-6 .msg .face { left: -58px; }
+        
+        .msg .pointer-border {
+            display: block;
+            position: absolute;
+            top: 1.5em;
+            left: -10px;
+            margin-top: 9px;
+            border: 12px solid #999;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-left: 0;
+            width: 0;
+            height: 0;
+        }
+        .msg .pointer {
+            display: block;
+            border: 9px solid white;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -9px;
+            left: -6px;
+        }
+
+        .eng-msie.engv-6 .msg .pointer-border { display: none; }
+
+        .msg .info { float: right; }
+
+        /* People 'bubles' in the message header */
+        .msg .people {
+            padding: 0px 10px 0px 2px;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .msg .msg-subject { overflow: hidden; }
+
+        .msg .people:hover {
+            background: transparent url(../images/arrow.png) right no-repeat;
+            background-color: #e4ebf3;
+            padding: 0 9px 0 1px;
+            -moz-border-radius: 25%;
+            border: 1px solid #d8e1ed;
+            text-decoration: none;
+        }
+
+        .msg .people:hover .comma { 
+            visibility: hidden;
+        }
+
+        .msg .sender {
+            font-weight: bold;
+        }
+
+        .msg .date { 
+            display: block;
+            clear: both;
+            margin: 0.5em 0 0 12px;
+        }
+
+        .msg-content { 
+            border: 2px solid #999;
+            background-color: #999;
+        }
+        .msg .msg-header,
+        .msg .msg-content .msg-body {
+            padding: 4px 12px;
+            border: 1px solid #fff;
+        }
+        .msg .msg-header {
+        }
+
+        .msg .msg-header .people-group { padding-left: 12px; }
+
+        .msg .msg-header .recipients {
+        }
+
+        .msg.closed .msg-header .recipients { display: none; }
+        
+        .msg.closed .msg-header .date {
+            position: absolute;
+            top: 0;
+            right: 0.75em;
+        }
+
+        .msg .msg-content > .msg-header {
+            /* Hide IE/Win 6 and below */
+            background: transparent url(../images/grad.png) repeat-x top;
+        }
+        .msg .msg-content .msg-header a {
+            text-decoration: none;
+        }
+        .msg .msg-content .msg-body {
+            background-color: #fff;
+            min-height: 18px;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+        }
+
+    /* Row of actions (reply, forward, etc.) for individual messages */
+    .msg-actions {
+        /*
+        font-size: small;
+        padding: 0.25em 8px;
+        */
+    }
+    .msg-actions.bottom {
+        margin-bottom: 1.5em;
+        text-align: right;
+    }
+    .msg-actions.top { 
+        /*background-color: #fff;*/
+        position: relative;
+        /*
+        bottom: 1em;
+        line-height: 1em;
+        margin-top: -1em;
+        */
+        float: right;
+        margin-left: 1em;
+        /* Have at least enough margin to trigger an extra line of reflowing contacts... */
+        margin-bottom: 1px;
+        margin-right: -0.75em;
+    }
+    
+    .eng-msie.engv-6 .msg-actions.top { margin-right: -0.25em; }
+
+    .msg-actions a {
+        /*
+        text-decoration: none;
+        */
+        display: block;
+        float: left;
+        padding: 0 0.25em;
+        min-height: 16px;
+        white-space: nowrap;
+    }
+    .msg-actions a.reply {
+        padding-left: 28px;
+        background: url(../images/mail-reply-sender-16.png) no-repeat 8px 0;
+    }
+    .msg-actions a.replyall {
+        padding-left: 28px;
+        background: url(../images/mail-reply-all-16.png) no-repeat 8px 0;
+    }
+    .msg-actions a.forward {
+        padding-left: 28px;
+        background: url(../images/mail-forward-16.png) no-repeat 8px 0;
+    }
+
+    .msg-actions a:hover {
+        text-decoration: underline !important;
+    }
+
+    /* closed message */
+    .msg.closed {
+    }
+    .msg.closed .msg-content {
+    }
+    .msg.closed .msg-header {
+        /*
+        margin: 0;
+        height: 1.25em;
+        overflow: hidden;
+        */
+    }
+    .msg.closed .msg-body {
+        display: none;
+    }
+    .msg.closed .msg-snippet {
+        /*
+        display: inline;
+        */
+        display: block;
+        /*
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 200px;
+        padding: 5px;
+        height: 1em;
+        overflow: hidden;
+        */
+        opacity: 0.75;
+        padding-left: 12px;
+        margin-top: 0.5em;
+    }
+    .msg.closed .pointer-border {
+        display: none;
+    }
+    .msg.closed .face {
+        top: 0;
+    }
+    .msg.closed .msg-actions {
+        display: none;
+    }
+
+    /* Attachments */
+    .msg .msg-attachments { 
+        border: 1px solid #fff;
+        border-top: 0;
+        padding: 0.5em 0.25em 0.5em 24px; 
+    }
+        .msg.closed .msg-attachments { 
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+        }
+        .msg .msg-content > .msg-attachments { 
+            /*
+            background: transparent url(../images/grad.png) repeat-x top;
+            */
+        }
+
+        .msg .msg-attachments b { 
+            font-weight: normal; 
+        }
+
+        .msg .msg-attachments ul,
+        .msg .msg-attachments li { 
+            display: inline; 
+            list-style: none; 
+        }
+            .msg .msg-attachments li { padding-left: 0.25em; }
+
+    /* Composer in conversation view */
+    .msg .msg-compose {
+        border: 2px solid #ccc;
+        border-top-width: 0;
+        background-color: #f6f6f6;
+    }
+
+    /* Msg color */
+    /* Unread (new) messages */
+    .msg .pointer-border { border-right-color: #8fd78b; }
+    .msg .msg-content { border-color: #8fd78b; background-color: #d2f2cf; }
+    .msg .msg-header { color: #43923d; }
+    .msg .msg-attachments { background-color: #e6f3e5; color: #4a9210; }
+    .msg .msg-compose { background-color: #e6f3e5; border-color: #8fd78b; }
+    .msg .disclosure, .msg.closed .disclosure { border-color: #8fd78b; }
+
+    /* Read messages */
+    .msg.read .pointer-border { border-right-color: #ddd; }
+    .msg.read .msg-content { border-color: #ddd; background-color: #eee; }
+    .msg.read .msg-header { color: #777; }
+    .msg.read .msg-attachments { background-color: #f6f6f6; color: #777; }
+    .msg.read .msg-compose { background-color: #f6f6f6; border-color: #ddd; }
+    .msg.read .disclosure, .msg.read.closed .disclosure { border-color: #aaa; }
+
+    /* Sent messages */
+    .msg.sent .pointer-border { border-right-color: #ffdb4e; }
+    .msg.sent .msg-content { border-color: #ffdb4e; background-color: #ffeda6; }
+    .msg.sent .msg-header { color: #a78600; }
+    .msg.sent .msg-attachments { background-color: #fff9e1; color: #a78600; }
+    .msg.sent .msg-compose { background-color: #fff9e1; border-color: #ffdb4e; }
+    .msg.sent .disclosure, .msg.sent.closed .disclosure { border-color: #ffdb4e; }
+
+    .msg .msg-snippet {
+        display: none;
+    }
+        
+    .msg .disclosure,
+    .msg.read .disclosure,
+    .msg.sent .disclosure { 
+        margin: 5px 0 0 -12px;
+        float: left;
+        border-style: solid;
+        border-width: 5px;
+        border-bottom-width: 0;
+        height: 0;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        position: relative;
+        right: 4px;
+    }
+    .msg.closed .disclosure,
+    .msg.read.closed .disclosure,
+    .msg.sent.closed .disclosure { 
+        margin: 2px 2px 0 -9px;
+        border-width: 5px;
+        border-right-width: 0;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+
+/* Message body rules, especially for HTML email */
+.msg-body {
+    /*
+    font-family: bitstream vera sans mono, monaco, monospace;
+    */
+    overflow: auto;
+}
+    .msg-body ul,
+    .msg-body ol,
+    .msg-body li {
+        margin: 0 0 0 1em;
+    }
+    .msg-body ul li { list-style: disc; }
+    .msg-body ol li { list-style: decimal; }
+
+    /*
+    .msg-body html,
+    .msg-body body,
+    .msg-body table { font-family: sans-serif; }
+    */
+
+    /* iTunes message fixup */
+    .msg-body table[width="583"] { font-size: 9pt; }
+
+    .msg-body h1 , 
+    .msg-body h2 , 
+    .msg-body h3 , 
+    .msg-body h4 , 
+    .msg-body h5 , 
+    .msg-body h6 { 
+        text-align: left; 
+        color: inherit;
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+    .msg-body table { }
+
+    .msg-body pre { font-family: bistream vera sans mono,monaco,luxi mono,monospace; }

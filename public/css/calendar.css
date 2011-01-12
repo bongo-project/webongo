@@ -1,0 +1,1070 @@
+#calendar h1, #calendar h2 { text-align: center; }
+    #calendar h1 { padding: 0.5em; font-size: 16pt; }
+    #calendar h2 { padding: 7px; }
+
+/* Generic calendar table styles */
+.calendar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+    /* Modify columnview for the timestrip */
+    .calendar.columnview.top,
+    .calendar.columnview.bottom {
+        /*
+        margin-left: 0;
+        */
+    }
+
+    /* Generic calendar rules for columnview and monthview */
+    .calendar th, .calendar td {
+        vertical-align: top;
+    }
+        .calendar th {
+            font-size: 80%;
+            color: #555;
+            background-color: transparent;
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: normal;
+        }
+
+        .calendar th.last { 
+            border-right: 1px solid #eee;
+        }
+
+        .calendar td {
+            border-left: 1px solid #ccc;
+            border-bottom: 3px double #ccc;
+        }
+        .calendar.monthview td {
+            /* Work around double-border on the left in monthview */
+            border-right-width: 0;
+            border-left-width: 1px;
+        }
+        .calendar td.last { 
+            border-right: 1px solid #ccc;
+        }
+
+        .calendar.bottom td {
+            border-left: 1px solid #d5d5dd;
+            border-bottom: none;
+        }
+        .calendar.bottom td.last {
+            border-right: 1px solid #d5d5dd;
+        }
+
+        .calendar .buble {
+            font-size: 86%;
+            list-style: none;
+        }
+
+        /* Hide timezones and notes for items by default */
+        .calendar .tz, .calendar .note { visibility: hidden; }
+        
+        /* Show notes on first event only */
+        .columnview .timed-events .buble.start .note { visibility: visible; }
+
+        /* Hide spacers */
+        .calendar .spacer { visibility: hidden; }
+
+        .calendar .date a,
+        .calendar th a { 
+            color: inherit;
+        }
+            .calendar .date a:hover,
+            .calendar th a:hover { 
+                text-decoration: none; 
+                color: #000;
+            }
+
+            .calendar .date a { padding: 2px 5px; }
+
+            .calendar th a { 
+                display: block;
+                padding: 3px 4px; 
+            }
+            .calendar th a:hover { 
+                background: transparent url(../images/cal-selected.png);
+            }
+            /* IE-only stipple */
+            .eng-msie.engv-6 .calendar th a:hover { 
+                background-image: none;
+                background-color: #eef;
+            }
+
+/*** Monthview-specific ***/
+
+.monthview { 
+        border-bottom: 1px solid #d5d5dd;
+        padding: 0 6px;
+}
+
+    .calendar td.offmonth {
+        background: #fcfcfc url(../images/cal-offmonth.png);
+        color: #bababa;
+    }
+    .calendar.cellview td.offmonth { background-image: none; }
+
+    .calendar tr > td.today {
+        background-image: url(../images/cal-today.png);
+        color: #b99508;
+    }
+    /* IE6 stipple BG for today */
+    .eng-msie.engv-6 .calendar td.today {
+        background-image: url(../images/cal-today-stipple.png);
+        color: #b99508;
+    }
+    .calendar td.offmonth.today {
+        color: #675922;
+    }
+    .monthview td {
+        height: 8em;
+        width: 14.28%;
+        padding: 0 0 1.5em;
+        border-bottom: 1px solid #d5d5dd;
+        color: #777;
+    }
+    .monthview tr.last td { border-bottom: none; }
+
+    .monthview .date { }
+    html>body .monthview .date { text-align: right; font-size: 100%; }
+
+    .monthview .timed-events .buble {
+        background-color: transparent;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 0.1em 0 0.5em;
+        list-style: disc;
+        list-style-position: inside;
+        background-color: transparent;
+    }
+
+    .monthview .untimed-events .buble { height: auto !important; }
+
+    /* Hide non-starting day-spanning timed events */
+    .monthview .timed-events .buble { display: none; }
+        .monthview .timed-events .buble.start { display: list-item; }
+
+    /* Webkit browsers need the width to be 100% instead of auto */
+    .eng-webkit .monthview .timed-events .buble { width: 100%; }
+
+    /* "Simple" fix for IE7 */
+    .eng-msie.engv-7 .monthview .untimed-events { 
+        position: relative;
+        width: 100%;
+    }
+    
+    /* Fix for IE6 */
+    /* _REAL_ FIX COMING SOON! (This is a quick placeholder) */
+    .eng-msie.engv-6 .monthview .untimed-events { position: relative; }
+    
+    /* Turn off non-titles in month view */
+    .monthview .item span { display: none; }
+    
+    .monthview .timed-events .item .time { 
+        display: inline; 
+        opacity: 0.6;
+        font-size: 90%;
+    }
+    /*.monthview .timed-events .item .time:before { content: " ("; }*/
+    .monthview .timed-events .item .time:after { content: ": "; }
+    .eng-msie.engv-7 .monthview .timed-events .item .time,
+    .eng-msie.engv-6 .monthview .timed-events .item .time { margin-right: 1ex; /* IE-only */ }
+
+    .monthview .untimed-events .item,
+    .monthview .untimed-events .spacer {
+        height: 1em;
+        line-height: 1;
+        overflow: hidden;
+        padding: 2px;
+        border: 1px solid red;
+        margin: 1px 0;
+    }
+
+    .monthview .untimed-events .item strong {
+        /* Add space between the lines */
+        line-height: 2em;
+        position: relative;
+        bottom: 0.5em;
+        padding-left: 0.25em;
+    }
+
+    .month-header { 
+  width: 100%;
+    }
+.month-header-title { 
+  width: 100%;
+}
+
+/*** Summary-specific ***/
+.cellview {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.cellview td {
+    width: 50% !important;
+}
+
+.cellview .date {
+    text-align: center !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+
+
+/*** Columnview-specific ***/
+.columnview { }
+
+    .calendarwrapper .top { margin: 0; }
+
+    .calendarwrapper .bottom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .columnview td.untimed {
+        background-color: #eee;
+    }
+    .columnview td.untimed .spacer,
+    .columnview td.untimed .buble {
+        position: relative;
+        display: block;
+        font-size: 0.9em;
+        height: 1.75em !important;
+        line-height: 1.7;
+        overflow: hidden;
+    }
+
+    .columnview .timed-events {
+        /* Wrapper to have event children be absolutely position relative to column */
+        position: relative;
+        /*height: 72em;*/
+    }
+
+    .columnview .timed-events .buble {
+        list-style: none;
+        position: absolute;
+        /* We don't want disappearing events... */
+        min-height: 1.5em;
+        overflow: hidden;
+        height: 8.34%
+    }
+
+
+/*** Both columnview & monthview ***/
+.calendar {}
+
+    /* Make titles non-bold */
+    .calendar .item strong { font-weight: normal; }
+
+
+/*** Event colors ***/
+#calendar .buble {
+}
+
+    .calendar .buble { color: #fff; }
+    #calendar-list .cal-name { 
+      padding-left: 4px;
+      /*
+      overflow: hidden;
+      white-space: nowrap;
+      */
+    }
+
+    /* Hack to fill the buble with the item (for IE6) */
+    /* It's approximate, but works pretty ok... */
+    .eng-msie.engv-6 #calendar .columnview .buble .item { width: 90%; height: 95%; }
+
+/**************/
+/*** Bubles ***/
+/**************/
+
+/* transitory event styles */
+.buble.moving {
+    opacity: 0.5;
+    z-index: 10;
+    position: relative;
+}
+
+.buble.deleting {
+    border: 2px solid red;
+}
+
+.buble.saving {
+    border: 2px solid green;
+}
+
+
+.columview .timed-events .buble.moving {
+    position: absolute;
+}
+
+/* All bubles, regardless of view */
+.monthview .untimed-events .spacer,
+.monthview .untimed-events .buble .item,
+.columnview td .buble .item {
+    overflow: hidden;
+    display: block;
+}
+
+/* ...except don't display dragholders in month view */
+.monthview .untimed-events .dragholder {display: none; }
+
+    /* columnview only */
+    .columnview td .buble .item {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+    }
+
+    .columnview ul .buble .item {
+        padding: 3px;
+    }
+
+    .columnview .timed-events .buble .item {
+        margin: 0 2px 0 2px;
+
+        /* the top and bottom borders are handled by the selectors
+	 * with .start and .end so that events spanning multiple days
+	 * do not have borders on the portion that spans the day
+	 * boundaries.
+	 *
+	 * The border + padding should equal 3px, so that the layout
+	 * on the inside doesn't change just because you selected an
+	 * event.
+	 *
+	 * Garrett, please check multi-day events if you change these
+	 * to not be a border-left and border-right.
+	 */
+        border-left: 1px solid red;
+        border-right: 1px solid red;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .columnview .timed-events .buble.popped-out .item {
+        border-left-width: 2px;
+        border-right-width: 2px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    /* column view timed start */
+    .columnview .timed-events .buble.start .item {
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-topright: 10px;
+        border-top: 1px solid red;
+        padding-top: 2px;
+        margin-top: 1px;
+    }
+    .columnview .timed-events .buble.start > .item {
+        /*
+        background: url(../images/grad-cal-title.png) repeat-x 0 -480px;
+        */
+    }
+    .columnview .timed-events .buble.start.popped-out .item {
+        border-top-width: 2px;
+        padding-top: 1px;
+        background-position: 0 -482px;
+    }
+
+    /* column view timed end */
+    .columnview .timed-events .buble.end .item { 
+        -moz-border-radius-bottomleft: 10px;
+        -moz-border-radius-bottomright: 10px;
+        border-bottom: 1px solid red;
+        padding-bottom: 2px;
+        margin-bottom: 1px;
+    }
+    .columnview .timed-events .buble.end.popped-out .item { 
+        border-bottom-width: 2px;
+        padding-bottom: 1px;
+    }
+
+    /* Make the cursor a normal pointer */
+    #calendar table ul .buble .item,
+    #calendar table ul .buble .item * { 
+        cursor: default; 
+        cursor: move;
+        cursor: grab;
+        cursor: -moz-grab;
+    }
+
+    #calendar table ul .buble.moving .item, 
+    calendar table ul .buble.moving .item * { 
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+    }
+
+/* Column view bubles' titles */
+.columnview td .buble .item .title {
+    font-family: luxi sans, myriad, bitstream vera sans, sans-serif;
+    display: block;
+    text-align: center;
+    margin: -0.2em;
+    margin-bottom: 0.25em;
+    /*
+    background: url(../images/stipple-1bit.png);
+    */
+}
+.columnview .timed-events .buble .item .title {
+    padding: 0.4em 0.1em;
+}
+
+.columnview td .buble .item > .title {
+}
+.columnview td .buble .item .time {
+    text-align: center;
+    display: block;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 90%;
+    opacity: 0.75;
+    /* Let's hide time by default... */
+    display: none;
+}
+.columnview td .buble .item > .inborder {
+    border: 2px solid #fff;
+    -moz-border-radius: 2px 2px 1px 2px;
+    border-radius: 2px 2px 1px 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+}
+.columnview td .buble .item .note {
+    display: block;
+    font-size: 90%;
+    opacity: 0.8;
+    padding: 0.5em 6pt;
+}
+
+.columnview .buble.end .item .resize {
+    background: transparent url(../images/grippy-v.png) no-repeat bottom center;
+    height: 12px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 -1px -1px;
+    opacity: 0.5;
+    cursor: resize !important;
+}
+.eng-msie.engv-6 .columnview .buble.end .item .resize { background-image: url(../images/grippy-v.gif); }
+*
+.columnview .buble.end.popped-out .item .resize { 
+    opacity: 1; 
+    margin: 0 -1px -3px;
+}
+.columnview .untimed-events .buble.end .item .resize {
+    background: transparent url(../images/grippy-h.png) no-repeat right;
+    width: 12px;
+    height: 100%;
+    margin: 0;
+}
+.columnview .untimed-events .buble.end .item .resize { background-image: url(../images/grippy-h.gif); }
+
+.columnview .untimed-events .buble.end.popped-out .item .resize {
+    margin: 0 -2px 0;
+}
+
+.columnview td .buble .item > .resize {
+    /* Non-IE6 */
+}
+
+.columnview .item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+}
+
+.columnview .time {
+    display: block;
+    text-align: center;
+}
+
+.calendar.view7days th, 
+.calendar.view7days td {
+    width: 14%;
+}
+
+.calendar.view4days th, 
+.calendar.view4days td {
+    width: 25%;
+}
+
+.calendar.view1days th, 
+.calendar.view1days td {
+    width: 100%;
+}
+
+.calendarwrapper { position: relative; width: 100%; }
+
+.timedwrapper { position: relative; }
+
+
+/*** Untimed continuation "rules" ***/
+.calendar .untimed-events .item {
+    background-repeat: no-repeat;
+    background-image: url(../images/continued-right.png);
+    background-position: right;
+    margin: 1px 0;
+    padding-top: 2px 3px;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+    .calendar .untimed-events .item strong {
+        background-repeat: no-repeat;
+        background-image: url(../images/continued-left.png);
+        background-position: left;
+        padding-left: 16px;
+    }
+    
+    .calendar .untimed-events .buble.popped-out .item {
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .calendar .untimed-events .buble.start .item {
+        -moz-border-radius-topleft: 9px;
+        -moz-border-radius-bottomleft: 9px;
+        border-left: 1px solid red;
+        padding-left: 2px;
+        margin-left: 1px;
+    }
+    .calendar .untimed-events .buble.start.popped-out .item {
+        border-left-width: 2px;
+        padding-left: 1px;
+    }
+
+    .calendar .untimed-events .buble.end .item {
+        -moz-border-radius-topright: 9px;
+        -moz-border-radius-bottomright: 9px;
+        border-right: 1px solid red;
+        padding-right: 2px;
+        margin-right: 1px;
+    }
+    .calendar .untimed-events .buble.end.popped-out .item { 
+        border-right-width: 2px;
+        padding-right: 1px;
+    }
+
+    .calendar .untimed-events .buble.start .item strong,
+    .calendar .untimed-events .buble.end .item {
+        background-image: none;
+        padding-left: 2px;
+    }
+
+    .calendar .untimed-events .buble.end .item strong {
+    }
+    .calendar .untimed-events .buble.start.end .item,
+    .calendar .untimed-events .buble.start.end .item strong {
+        background-image: none;
+    }
+
+    /* Gray */
+    #calendar-list .gray label { border-color: #aaa; }
+    #calendar .columnview .buble.gray .item,
+    .monthview .untimed-events .buble.gray .item {
+        background-color: #aaa;
+        border-color: #888;
+    }
+    #calendar-list .gray,
+    .monthview .timed-events .buble.gray { color: #888; }
+    #calendar-list .selected.gray,
+    .monthview .timed-events .buble.gray.popped-out { background-color: #f6f6f6; }
+
+    /* Red */
+    #calendar-list .red label { border-color: #e15e50; }
+    #calendar .columnview .buble.red .item,
+    .monthview .untimed-events .buble.red .item {
+        background-color: #e15e50;
+        border-color: #cc3525;
+    }
+    #calendar-list .red,
+    .monthview .timed-events .buble.red { color: #cc3525; }
+    #calendar-list .selected.red,
+    .monthview .timed-events .buble.red.popped-out { background-color: #fae4e1; }
+
+    /* Orange */
+    #calendar-list .orange label { border-color: #ee8d03; }
+    #calendar .columnview .buble.orange .item,
+    .monthview .untimed-events .buble.orange .item {
+        background-color: #ee8d03;
+        border-color: #ae6600;
+    }
+    #calendar-list .orange,
+    .monthview .timed-events .buble.orange { color: #e08400; }
+    #calendar-list .selected.orange,
+    .monthview .timed-events .buble.orange.popped-out { background-color: #fff1dd; }
+
+    /* Yellow */
+    #calendar-list .yellow label { border-color: #ebbd08; }
+    #calendar .columnview .buble.yellow .item,
+    .monthview .untimed-events .buble.yellow .item {
+        background-color: #ebbd08;
+        border-color: #c9a204;
+    }
+    #calendar-list .yellow,
+    .monthview .timed-events .buble.yellow { color: #eabb00; }
+    #calendar-list .selected.yellow,
+    .monthview .timed-events .buble.yellow.popped-out { background-color: #fff9e1; }
+
+    /* Brown */
+    #calendar-list .brown label { border-color: #d29940; }
+    #calendar .columnview .buble.brown .item,
+    .monthview .untimed-events .buble.brown .item {
+        background-color: #d29940;
+        border-color: #aa7d2e;
+    }
+    #calendar-list .brown,
+    .monthview .timed-events .buble.brown { color: #bd8a36; }
+    #calendar-list .selected.brown,
+    .monthview .timed-events .buble.brown.popped-out { background-color: #f7f2e8; }
+
+    /* Green */
+    #calendar-list .green label { border-color: #6cb866; }
+    #calendar .columnview .buble.green .item,
+    .monthview .untimed-events .buble.green .item {
+        background-color: #6cb866;
+        border-color: #4a9b44;
+    }
+    #calendar-list .green,
+    .monthview .timed-events .buble.green { color: #4a9b44; }
+    #calendar-list .selected.green,
+    .monthview .timed-events .buble.green.popped-out { background-color: #e6f3e5; }
+
+    /* Blue */
+    #calendar-list .blue label { border-color: #7a9ac9; }
+    #calendar .columnview .buble.blue .item,
+    .monthview .untimed-events .buble.blue .item {
+        background-color: #7a9ac9;
+        border-color: #3c65a3;
+    }
+    #calendar-list .blue,
+    .monthview .timed-events .buble.blue { color: #5f85bf; }
+    #calendar-list .selected.blue,
+    .monthview .timed-events .buble.blue.popped-out { background-color: #e4eaf4; }
+
+    /* Indigo */
+    #calendar-list .indigo label { border-color: #8e71c5; }
+    #calendar .columnview .buble.indigo .item,
+    .monthview .untimed-events .buble.indigo .item {
+        background-color: #9e81c5;
+        border-color: #8a67b9;
+    }
+    #calendar-list .indigo,
+    .monthview .timed-events .buble.indigo { color: #8a67b9; }
+    #calendar-list .selected.indigo,
+    .monthview .timed-events .buble.indigo.popped-out { background-color: #ebe5f3; }
+    
+    /* Violet */
+    #calendar-list .violet label { border-color: #ad68b0; }
+    #calendar .columnview .buble.violet .item,
+    .monthview .untimed-events .buble.violet .item {
+        background-color: #ad68b0;
+        border-color: #904992;
+    }
+    #calendar-list .violet,
+    .monthview .timed-events .buble.violet { color: #ad68b0; }
+    #calendar-list .selected.violet,
+    .monthview .timed-events .buble.violet.popped-out { background-color: #f1e5f2; }
+
+    /* (FIXME) Note: IE6 inherits the last class when multiple classes are listed  */
+    /* See: http://css-discuss.incutio.com/?page=MultipleClasses */
+    /* and http://www.quirksmode.org/css/multipleclasses.html */
+    /* For now, IE6 users are getting purple highlights. */
+
+    /* Magic sauce to make text and the bullet the same color */
+    .monthview .timed-events .buble .item { color: inherit; }
+
+/*** Columnview extras (left-side timestrip & background calstripes) ***/
+.timestrip,
+.calstripes {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /*height: 72em;*/
+    position: relative;
+    z-index: 0;
+}
+
+    .timestrip-wrapper { width: 4.5em; text-align: center; }
+
+    .timestrip-wrapper.left,
+    .timestrip-wrapper.right {
+        float: none;
+    }
+
+        .timestrip div {
+            font-size: 0;
+            font-weight: normal;
+            color: #888;
+            white-space: nowrap;
+            height: 4.1666667%; /* 100/TotalHours */
+            position: relative;
+            overflow: visible;
+        }
+
+        .timestrip .spacer {
+            height: 2.083333333%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timestrip .even,
+        .timestrip .odd {
+            background: url(../images/bg-timestrip.png) no-repeat 100% 50%;
+        }
+
+        .timestrip-wrapper.right .timestrip .even,
+        .timestrip-wrapper.right .timestrip .odd {
+            background: url(../images/bg-timestrip-right.png) no-repeat 0% 50%;
+        }
+
+        .timestrip div .timeval { 
+            font-size: x-small;
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            line-height: 1;
+            margin-top: -0.5em;
+            top: 50%;
+        }
+
+        /* IE6 needs a little help with positioning */
+        .eng-msie.engv-6 .left .timestrip div .timeval { left: auto; }
+
+        .left .timestrip div .timeval { text-align: right; }
+        .right .timestrip div .timeval { text-align: left; }
+
+        /* Hide 12-hour (am/pm) by default, and show changes only */
+        /* .timestrip div .timeval span { opacity: 0.4; } */
+
+        .timestrip .first { font-weight: bold; }
+        .timestrip .first .timeval span {
+            opacity: 0.75;
+            font-weight: normal;
+        }
+
+    .calstripes { }
+
+        .calstripes div, .calstripes td { height: 4.1666667%; /* 100/TotalHours */ }
+
+        /* Calstripe alternative colors */
+        .calstripes .odd { background-color: #f5f5ff; }
+        .calstripes .even { background-color: #fff; }
+
+/* Styles specific to calendar popups */ 
+    /* Buble rounded corners skin */
+    #new-event-popup .popup-buble .t,
+    #sidebox-calendar .popup-buble .t,
+    .popup-buble .t {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .tr,
+    #sidebox-calendar .popup-buble .tr,
+    .popup-buble .tr {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .b,
+    #sidebox-calendar .popup-buble .b,
+    .popup-buble .b {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .br,
+    #sidebox-calendar .popup-buble .br,
+    .popup-buble .br {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .c,
+    #sidebox-calendar .popup-buble .c,
+    .popup-buble .c {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .cr,
+    #sidebox-calendar .popup-buble .cr,
+    .popup-buble .cr {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .t,
+    #sidebox-calendar .popup-buble .t,
+    .popup-buble .t {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .tr,
+    #sidebox-calendar .popup-buble .tr,
+    .popup-buble .tr {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .b,
+    #sidebox-calendar .popup-buble .b,
+    .popup-buble .b {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .br,
+    #sidebox-calendar .popup-buble .br,
+    .popup-buble .br {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .c,
+    #sidebox-calendar .popup-buble .c,
+    .popup-buble .c {
+        background-image: url(../images/popup.png);
+    }
+
+    #new-event-popup .popup-buble .cr,
+    #sidebox-calendar .popup-buble .cr,
+    .popup-buble .cr {
+        background-image: url(../images/popup.png);
+    }
+
+
+    #info-buble { z-index: 15; }
+
+    #info-bubble .usericon {
+        /*
+        width: 64px;
+        height: 64px;
+        float: left;
+        */
+        vertical-align: middle;
+        width: 32px;
+        height: 32px;
+        margin: 0 3px 0 0;
+    }
+
+    .popup-buble .date { white-space: nowrap; }
+
+    .popup-buble .tags { color: #888; }
+
+    .popup-buble .description,
+    .popup-buble .note {
+        margin: 1em 0;
+    }
+
+    .popup-buble #view-apt,
+    .popup-buble #edit-apt { display: block; text-align: right; }
+
+    .popup-buble #apt-edit * { margin: 2px; }
+
+    .popup-buble .location { color: #888; }
+
+    /* Forms */
+    .popup-buble textarea,
+    .popup-buble select,
+    .popup-buble input { 
+        font-size: inherit;
+        font-family: inherit;
+    }
+    .popup-buble td.form-label {
+        text-align: right;
+        padding-right: 7px;
+    }
+
+    .popup-buble .date-range-entry.untimed .time-entry-fields {
+        display: none;
+    }
+
+    .popup-buble .time-entry-fields td,
+    .popup-buble .day-entry {
+        white-space: nowrap;
+    }
+
+        .popup-buble h3,
+        #info-summary {
+            font-weight: bold;
+            font-size: 110% !important;
+            /*
+            min-width: 15em;
+            width: 15em;
+            */
+        }
+
+        .bublecal {
+            margin: 0 auto;
+        }
+        
+        #info-summary {
+            margin-bottom: 3px;
+        }
+
+        #info-summary,
+        #info-location {
+            /*
+            width: 20em;
+            max-width: 100%;
+            */
+        }
+
+        .popup-buble textarea {
+            /*
+            width: 20em;
+            max-width: 100%;
+            */
+        }
+
+        #info-tabcontent table {
+            margin: 6px 0;
+        }
+        #info-tabcontent th {
+            font-weight: normal;
+            text-align: right;
+            padding-right: 0.5em;
+        }
+
+        #info-tabcontent #info-start-time-span,
+        #info-tabcontent #info-end-time-span {
+            padding-left: 0.25em;
+        }
+        #info-tabcontent #info-start-time-span input,
+        #info-tabcontent #info-end-time-span input {
+            margin-left: 0.25em;
+        }
+        
+        #info-tabcontent table td { }
+        #info-tabcontent table input { }
+
+        #info-content .date {
+            opacity: 0.5;
+        }
+
+    .popup-buble .actions, .tz-editor .actions,
+    .popup-buble .info-actions {
+        overflow: auto;
+        text-align: right;
+        margin-top: 6px;
+    }
+    
+    .eng-msie.engv-6 .popup-buble .actions {
+        width: 30em;
+        white-space: nowrap;
+    }
+    .eng-msie.engv-6 .popup-buble label {
+        white-space: nowrap;
+    }
+
+    .popup-buble .actions .secondary,  .tz-editor .actions .secondary { float: left; }
+
+    .popup-buble .actions input, .tz-editor .actions .input,
+    .popup-buble .actions a, .tz-editor .actions a {
+        margin: 0 0 0 1em;
+        text-decoration: none;
+    }
+
+    .popup-buble .actions input.secondary,
+    .popup-buble .actions a.secondary,
+    .popup-buble .actions .secondary input,
+    .popup-buble .actions .secondary a {
+        margin: 0 1em 0 0;
+    }
+    
+    .rrule-editor {
+        margin: 0;
+        padding: 0;
+    }
+    .rrule-editor li {
+        list-style: none;
+        padding: 5px;
+        margin: 0;
+    }
+    .rrule-editor label {
+        display: inline-block;
+        display: -moz-inline-box;
+        line-height: 1.8;
+        vertical-align: top;
+        width: 75px;
+    }
+    .rrule-editor               .controls               {display: none;}
+    .rrule-editor.day           .controls.day           {display: block;}
+    .rrule-editor.week          .controls.week          {display: block;}
+    .rrule-editor.month-by-date .controls.month-by-date {display: block;}
+    .rrule-editor.month-by-day  .controls.month-by-day  {display: block;}
+    .rrule-editor.year          .controls.year          {display: block;}
+    .rrule-editor.end-by-date   .controls.end-by-date   {display: block;}
+    .rrule-editor.end-by-count  .controls.end-by-count  {display: block;}
+
+.icon { height: 16px; width: 16px; }
+.icon.web { background-image: url(../images/applications-internet.png); }
+.icon.bongo { background-image: url(../images/bongo-favicon.png); }
+.icon.readwrite, .icon.publish { background-image: url(../images/accessories-text-editor.png); }
+.icon.readonly, .icon.protect { background-image: url(../images/emblem-readonly.png); }
+.icon.searchable { background-image: url(../images/system-search.png); }
+.icon.info { background-image: url(../images/dialog-information.png); }
+
+.icon.calendars { background-image: url(../images/icon-simple-calendars.png); }
+.icon.addressbook { background-image: url(../images/icon-simple-contacts.png); }
+.icon.todos { background-image: url(../images/icon-simple-todos.png); }
+
+/* Icons for IE6 */
+.icon.web { background-image: url(../images/applications-internet.gif); }
+.icon.bongo { background-image: url(../images/bongo-favicon.gif); }
+.icon.readwrite, .icon.publish { background-image: url(../images/accessories-text-editor.gif); }
+.icon.readonly, .icon.protect { background-image: url(../images/emblem-readonly.gif); }
+.icon.searchable { background-image: url(../images/system-search.gif); }
+.icon.info { background-image: url(../images/dialog-information.gif); }
+
+.eng-msie.engv-6 .icon.calendars { background-image: url(../images/icon-simple-calendars.gif); }
+.eng-msie.engv-6 .icon.addressbook { background-image: url(../images/icon-simple-contacts.gif); }
+.eng-msie.engv-6 .icon.todos { background-image: url(../images/icon-simple-todos.gif); }
+
+/* Next and previous links */
+.month-next,
+.month-prev {
+    white-space: nowrap;
+    font-size: 90%;
+}
+
+    td.month-next,
+    td.month-prev {
+        vertical-align: middle;
+        padding: 3px 2em;
+    }
+
+    a.month-next,
+    a.month-prev,
+    td.month-next a,
+    td.month-prev a {
+        display: block;
+    }
+
+    a.month-next:hover,
+    a.month-prev:hover,
+    td.month-next a:hover,
+    td.month-prev a:hover { text-decoration: none; }
+
+    .month-next img,
+    .month-prev img {
+        width: 16px;
+        height: 16px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+
+    .month-prev img { background-image: url(../images/go-previous.png); }
+    .month-next img { background-image: url(../images/go-next.png); }
