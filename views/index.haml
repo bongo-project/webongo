@@ -1,7 +1,124 @@
 %html
   %head
-    %title My Sinatra App
- 
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:href => "images/bongo-favicon.ico", :rel => "icon", :type => "image/ico"}/
+    %link{:href => "images/bongo-favicon.png", :rel => "icon", :type => "image/png"}/
+    %title Bongo
+    <%= stylesheet_link_tag 'interpreter', 'layout', 'widgets', 'login', 'composer', 'conversation', 'contacts', 'calendar', 'summary', 'print'%>
+    <%= javascript_include_tag :defaults %>
+    <% csrf_meta_tag %>
   %body
-    %h1 Hello World
-    %p Your app is up and running!
+    / Javascript Warning
+    %noscript
+      #no-javascript-warning
+        The Bongo web interface requires a javascript-enabled browser.  If you have
+        turned off javascript in your browser, please turn it back on and reload this
+        page to use Bongo.
+    %iframe#history-iframe{:style => "display: none;"}
+    / Login Pane
+    #login-pane{:style => "display: none;"}
+      #login-bg-top
+      #login-bg-bottom
+      %h1#login-logo Bongo
+      %h4#login-message &nbsp;
+      %table{:cellpadding => "0", :cellspacing => "6", :summary => ""}
+        %tr
+          %th
+            %label#login-user-label
+          %td{:colspan => "2"}
+            %input#login-user.text-entry{:type => "text"}/
+        %tr
+          %th
+            %label#login-password-label
+          %td{:colspan => "2"}
+            %input#login-password.text-entry{:type => "password"}/
+        %tr
+        %tr
+          %th
+            %label#login-language-label
+          %td{:colspan => "2"}
+            %select#login-language{:style => "width: 100%;"}
+              %option{:value => "en"} English
+              %option{:value => "fr"} Fran&ccedil;ais
+        %tr
+          %td
+          %td.default
+            %input#login-default{:type => "checkbox"}/
+            %label#login-default-label{:for => "login-default"}
+          %td
+            %input#login-button{:type => "button", :value => "Log In"}/
+        %tr
+          %td{:colspan => "3"}
+    / Content Area
+    #content{:style => "display: none"}
+      #notification Notification
+      %table#page-frame{:cellpadding => "0", :cellspacing => "0"}
+        %tr#page-header
+          %td#logo.header-cell
+            %span#user-name
+            %ul#section-user
+              %li
+                %a{:href => "javascript:void(Dragonfly.logout());"} Log Out
+              /
+                Feedback disabled. Check the destination address in Dragonfly.js
+                when re-enabled.
+                <li><a href="javascript:void(Dragonfly.sendFeedback());">Send Feedback</a></li>
+          %td.header-cell
+            #search
+              %input#search-entry{:autosave => "BongoSearch", :placeholder => "Search Bongo", :results => "10", :type => "search"}/
+              %input{:onclick => "void(Dragonfly.search ($('search-entry').value))", :type => "button", :value => "Search"}/
+              %input{:onclick => "void(Dragonfly.search (''))", :type => "button", :value => "Clear"}/
+          %td.header-cell{:style => "text-align:right; padding-right:15px;"}
+            %form#view-tz
+              %label#tzlabel
+                Timezone:
+                %span#tzselect
+        %tr
+          %td#section-sidebar
+            #sidebar-nav
+              %span.t
+                %span.tr
+              %span.c
+                %span.cr
+              %span.b
+                %span.br
+              #sidebar-tabs-large
+                #summary-tab.tab
+                  %a#summary-tab-href{:href => "#summary", :title => "Look at an overview of your mail and events"}
+                    %strong Summary
+                #mail-tab.tab
+                  %a#mail-tab-href{:href => "#mail", :title => "Read your mail"}
+                    %strong Mail
+                .action
+                  %a{:href => "mailto:"} Compose New Mail
+                .tab-spacer
+                #calendar-tab.tab
+                  %a#calendar-tab-href{:href => "#calendar", :title => "View your calendar"}
+                    %strong Calendar
+                .action
+                  %a#new-event-href{:href => "javascript:void(Dragonfly.Calendar.newEvent())"} Create New Event
+              #sidebar-tabs-small
+                Show:
+                %select#sidebar-select
+                  %option{:value => "summary"} Summary
+                  %option{:value => "mail"} Mail
+                  %option{:value => "calendar"} Calendar
+                  %option#sidebar-select-search{:value => "search"} Search
+                %p
+                  New:
+                  %a{:href => "mailto:"} Mail
+                  |
+                  %a{:href => "javascript:void(Dragonfly.Calendar.newEvent())"} Event
+            #sidebox-calendar
+            #sidebox-sidebook
+          %td#section-content{:colspan => "2"}
+            #sourcebar
+            #toolbar
+            #content-iframe
+    #extra{:style => "display: none"}
+      %a#source Source
+      |
+      %a{:href => "javascript:void(Dragonfly.toggleConsole());"} Console
+      |
+      %a{:href => "javascript:void(createLoggingPane(true));"} Logs
+    %form{:name => "webkitKludge"}
