@@ -1,0 +1,546 @@
+.conversation-list
+  width: 100%
+  font-size: inherit
+  .date, .time
+    white-space: nowrap
+
+/* Force the date and time to 1 line high
+
+/* Eeevil hack to work around the scrollbar eating dates 
+ * issue in IE6 (okay, perhaps it isn't that evil)
+
+.eng-msie.engv-6 .conversation-list .date
+  padding-right: 22px
+
+.conversation-list
+  table
+    width: 100%
+  tr.unread
+    font-weight: bold
+  td
+    color: #517faf
+    padding: 0.25em 0 0.25em 0.5em
+    vertical-align: top
+    font-size: 86%
+    &.time
+      padding-right: 0.5em
+
+.summary-category.mail-summary a, .conversation-list tr td.subject a
+  color: #a38bad
+
+.summary-category .unread a, .conversation-list tr.unread td.subject a
+  color: #3974ce
+
+.summary-category a .summary-from
+  color: #777
+  text-decoration: none
+
+.conversation-list tr
+  td.from a, &:hover td.from a
+    color: #777
+    text-decoration: none
+
+.summary-category .unread a .summary-from
+  color: #000
+
+.conversation-list
+  tr
+    &.unread td.from a
+      color: #000
+    td
+      &.date a, &.time a
+        color: #777
+        font-weight: normal
+        text-decoration: none
+    &:hover td
+      &.date a, &.time a
+        color: #777
+        font-weight: normal
+        text-decoration: none
+      &.from a, &.subject a
+        text-decoration: underline
+        color: #f57900
+  .group-header td
+    font-size: 105%
+    color: #555
+    background-color: #f6f6f6
+    border: 1px solid #e2e2e2
+    border-width: 1px 0
+    padding: 1ex 2ex
+  .group-footer .empty
+    color: #aaa
+    padding: 0 4ex
+
+.even
+  background-color: #f5f8fb
+
+.conversation-list
+  tr.even
+    background-color: #f5f8fb
+  td
+    &.checkbox, &.star
+      width: 1%
+  div.star
+    background-position: 0 0
+    &.starred
+      background-position: 0 -32px
+    &:hover
+      background-position: 0 -16px
+    &:focus
+      background-position: 0 -32px
+      text-decoration: none
+
+/* Constrain checkbox and star widths to minimum
+
+.star
+  &:hover, &:focus
+    background-position: 0 -32px
+    text-decoration: none
+
+div.star
+  float: left
+  display: block
+  list-style: none
+  margin: 0 6px 0 0
+  padding: 0px
+  width: 16px
+  height: 16px
+  background: url(../images/star-widget.png) 0 -16px no-repeat
+  text-indent: -1000em
+
+/* for IE6 only
+
+.eng-msie.engv-6 div.star
+  background-image: url(../images/star-widget.gif)
+
+hr
+  &.hresize, &.vresize
+    border: 0
+    padding: 2px
+    cursor: move
+  &.hresize
+    border-width: 0 1px
+  &.vresize
+    border-width: 1px 0
+
+/* Rounded corners widgets
+
+.t, .tr, .c, .cr, .b, .br
+  display: block
+  z-index: -1
+  background-repeat: no-repeat
+
+.t
+  /*
+   *height: 100%;
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: 0 24px 24px 0
+  background-position: top left
+
+.tr
+  margin: 0 0 24px 0
+  position: absolute
+  right: -24px
+  top: 0
+  height: 100%
+  width: 24px
+  background-position: top right
+
+.b
+  margin: 0 24px 0 0
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 24px
+  background-position: bottom left
+
+.br
+  z-index: 22
+  position: absolute
+  bottom: 0
+  right: -24px
+  width: 24px
+  height: 24px
+  background-position: bottom right
+
+.c
+  display: none
+  height: auto
+  position: absolute
+  top: 24px
+  bottom: 24px
+  left: 0
+  right: 0
+  background-repeat: repeat-y
+  background-position: left
+
+.cr
+  display: none
+  margin-right: -24px
+  height: auto
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-repeat: repeat-y
+  background-position: right
+
+/* Define a scrollable region -- just needs the size (height and/or width) set
+
+.scroll, .scrollv, .scrollh
+  position: relative
+  overflow: auto
+
+/* Fix for IE
+
+.eng-msie.engv-6
+  .scroll, .scrollv, .scrollh
+    width: 100%
+
+.scrollv
+  overflow-x: hidden
+  overflow-y: auto
+
+.scrollh
+  overflow-x: auto
+  overflow-y: hidden
+
+#section-sidebar .notebook
+  font-size: 87%
+
+.notebook-tabs
+  margin-top: 1ex
+  z-index: 5
+  position: relative
+  top: 2px
+  overflow: auto
+  a
+    display: block
+    float: left
+    margin: 1px
+    padding: 0.25ex 1.5ex 0.5ex
+    &.selected
+      margin: 0
+      border: 1px solid #d6ae12
+      border-bottom: none
+      background-color: #fffcf4
+      outline: none
+      color: #4f420e
+      text-decoration: none
+      cursor: default
+
+/* IE6 has problems with the tab floats
+
+.eng-msie.engv-6 .notebook-content
+  margin-top: -8px
+  position: relative
+  clear: both
+
+.notebook.tabs-visible .notebook-content
+  padding: 1.5ex
+  margin-bottom: 1ex
+  border: 1px solid #d6ae12
+  background-color: #fffcf4
+
+.autocompletions
+  ul
+    list-style-type: none
+    background: #fff
+    border: 1px solid ThreeDDarkShadow
+    margin: 0
+    padding: 0
+    overflow: auto
+    overflow-x: hidden
+    overflow-y: auto
+    /* Line height * lines = max-height (8 lines * 1.5 = 12em)
+    /* Autocomplete scrolls after 8 lines, in other words
+    max-height: 12em
+  li
+    white-space: nowrap
+    list-style-type: none
+    margin: 0
+    padding: 1px
+    display: block
+    &.selected
+      /* Native system highlight colors
+      background: Highlight
+      color: HighlightText
+
+/* toggle buttons
+
+.toggle-button-group
+  text-align: center
+  border-collapse: collapse
+  td
+    border: 1px solid #ce9d59
+    padding: 0
+    &.spacer
+      border: none
+    a
+      display: block
+      &:hover
+        text-decoration: none
+
+.toggle-button
+  display: block
+
+/* list selector
+
+.list-selector
+  margin-right: 0.5em
+  .search-field
+    width: 100%
+    margin-bottom: 1ex
+  .unselected-items
+    width: 100%
+    background-color: white
+    overflow: auto
+    overflow-y: auto
+    overflow-x: auto
+    border: 1px solid #bbbed0
+    position: relative
+  li
+    padding: 3px 5px
+    cursor: default
+    line-height: 1
+    white-space: nowrap
+    position: relative
+    overflow: hidden
+
+.eng-msie.engv-6 .list-selector li
+  white-space: normal
+  position: static
+
+.list-selector
+  li.popped-out
+    background-color: #e1e9f3
+  &.searching .unselected-items li
+    display: none
+    &.hit
+      display: block
+  li
+    input
+      vertical-align: middle
+    .icon
+      /*
+       *position: relative;
+       *z-index: 5;
+    .cal-name
+      white-space: nowrap
+      overflow: hidden
+      line-height: 1.5
+      position: absolute
+      left: 22px
+      right: 24px
+
+/* IE6 is going to have to wrap, at least for now.
+
+.eng-msie.engv-6 .list-selector li .cal-name
+  white-space: normal
+  position: static
+  overflow: display
+
+/*** The Popup Buble **
+
+.popup-container
+  position: absolute
+  left: 0
+  top: 0
+  visibility: hidden
+
+.popup-content p
+  overflow: auto
+  max-width: 10em
+
+.calendar-popup .popup-content p
+  overflow: visible
+  max-width: none
+
+.popup-content .description
+  max-width: 700px
+  max-height: 250px
+  overflow: auto
+
+.eng-msie .popup-content .description
+  width: 35em
+  height: 10em
+
+.popup-container .pointer
+  position: absolute
+  display: block
+  width: 25px
+  height: 25px
+  background-repeat: no-repeat
+  &.above
+    background-image: url(../images/info-pointer-down.png)
+    bottom: -3px
+    left: -8px
+  &.below
+    background-image: url(../images/info-pointer-up.png)
+    top: -3px
+    left: -8px
+  &.right
+    background-image: url(../images/info-pointer-left.png)
+    top: -8px
+    left: -3px
+  &.left
+    background-image: url(../images/info-pointer-right.png)
+    top: -8px
+    right: -3px
+
+.eng-msie.engv-6 .popup-container .pointer
+  &.above
+    background-image: url(../images/info-pointer-down.gif)
+  &.below
+    background-image: url(../images/info-pointer-up.gif)
+  &.right
+    background-image: url(../images/info-pointer-left.gif)
+  &.left
+    background-image: url(../images/info-pointer-right.gif)
+
+.popup-buble
+  position: relative
+  font-size: 0.9em
+  line-height: 1.4em
+  min-height: 48px
+  min-width: 125px
+  padding: 8px 14px 12px 10px
+  &.closable
+    .occurrence-entry, h3
+      margin-right: 26px
+  h2
+    margin: 0
+    padding: 0
+    font-size: 1.2em
+    display: inline
+  h3
+    padding-bottom: 10px
+  p
+    max-width: 25em
+  td div.date
+    display: none
+  .calendar
+    background-color: white
+  .close
+    display: block
+    position: absolute
+    overflow: hidden
+    top: 8px
+    right: 12px
+    width: 20px
+    height: 20px
+    background: url(../images/x.png) 0 0
+    cursor: pointer
+    cursor: hand
+    &:hover
+      background-position: 20px 0
+  .pointer
+    width: 25px
+    height: 25px
+    display: block
+    position: absolute
+    background-repeat: no-repeat
+    &.right
+      background-image: url(../images/info-pointer-right.png)
+      right: -20px
+    &.left
+      background-image: url(../images/info-pointer-left.png)
+      left: -23px
+    &.up
+      background-image: url(../images/info-pointer-up.png)
+      top: -23px
+    &.down
+      background-image: url(../images/info-pointer-down.png)
+      bottom: -20px
+
+/* (X) graphic
+
+.eng-msie.engv-6
+  .popup-buble .pointer
+    &.right
+      background-image: url(../images/info-pointer-right.gif)
+    &.left
+      background-image: url(../images/info-pointer-left.gif)
+    &.up
+      background-image: url(../images/info-pointer-up.gif)
+    &.down
+      background-image: url(../images/info-pointer-down.gif)
+  .t, .tr, .c, .cr, .b, .br
+    display: none
+  .popup-buble
+    background-color: #fffbe9
+    border: 1px solid #c8a000
+    margin: 3px 4px 4px 3px
+    width: 16em
+    .form-list li
+      white-space: nowrap
+      label
+        margin-right: 1ex
+
+/* popup-buble IE6 hacks
+
+.form-list
+  padding: 5px
+  li
+    padding-top: 7px
+  label
+    display: inline-block
+    line-height: 1.8
+    text-align: right
+    vertical-align: top
+    width: 75px
+
+.eng-gecko .form-list label
+  display: -moz-inline-box
+
+hr
+  border: 1px dotted #ddd
+  background-color: #ddd
+  border-width: 0 0 1px 0
+  padding: 0
+  height: 1px
+
+.popup-buble hr
+  border-color: #c8a000
+  background-color: #c8a000
+
+.action
+  white-space: nowrap
+
+.actions
+  white-space: nowrap
+  min-width: 20em
+
+.calendar-popup .actions
+  min-width: 0
+  overflow: visible !important
+
+.tz-wrapper
+  position: relative
+  display: inline
+
+.tz-editor
+  position: absolute
+  width: 300px
+  padding: 6px
+  right: 0px
+  display: none
+  color: black
+  background-color: #f6f6f6
+  border: 1px solid #bbb
+  z-index: 20
+  td
+    width: 50%
+  select
+    border-width: 1px
+    width: 100%
+  th
+    padding: 0px
+    font-weight: normal
+    text-align: left

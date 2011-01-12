@@ -1,0 +1,112 @@
+#summary-table
+  width: 100%
+
+td.summary-column
+  vertical-align: top
+  width: 50%
+
+.summary-category
+  margin: 1em 1em 2em 1em
+  h3
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-weight: normal
+    font-size: x-small
+    color: #555
+    border-bottom: 1px solid #ccc
+    padding: 1px
+  li
+    clear: both
+    a
+      padding: 0.5em 0.75em
+      &:hover
+        color: #f50
+        text-decoration: none
+  #frommycontacts-list li a:hover, #subscriptions-list li a:hover
+    text-decoration: underline
+  li
+    a span
+      display: block
+    &.unread a
+      font-weight: bold
+    a img
+      float: left
+      margin-right: 0.5em
+  &.cal-summary li a span.summary-event, li a span.summary-subject
+    line-height: 1.5em
+    height: 1.5em
+    overflow: hidden
+    position: relative
+  &.mail-summary a
+    font-size: 85%
+    display: block
+  li
+    a span.summary-from
+      color: #999
+      font-weight: normal
+    &.even a span.summary-from
+      /*
+       *color: #8d99a4;
+    a
+      span.summary-subject
+        font-size: 120%
+      &:hover span.summary-subject
+        text-decoration: underline
+  &.mail-summary li a img
+    margin-bottom: 0.5em
+  &.cal-summary
+    li a
+      display: block
+      padding: 0.25em 0.75em
+      font-size: 85%
+      clear: both
+      overflow: auto
+      text-align: right
+    #today-list li a span.summary-event
+      font-weight: bold
+    li a
+      span.summary-event
+        font-size: 120%
+        float: left
+      &:hover span.summary-event
+        text-decoration: underline
+      span
+        &.summary-day, &.summary-time
+          color: #555
+          display: inline
+          white-space: nowrap
+        &.summary-day
+          /*float: right;
+    #later-list li a span.summary-time
+      padding-right: 0.75em
+      color: #999
+  h3
+    background: transparent url(../images/message-closed-16.png) no-repeat 0 50%
+    padding-left: 20px
+    padding-top: 4px
+
+/* Generic summary items
+
+/* Stars (and other icons, if they're going to exist)
+
+/* Truncate multiple-row  events and mail subjects
+
+/* Mail summary items
+
+/* Stars, etc.
+
+/* Calendar summary items
+
+/*** Icons **
+
+.cal-summary h3
+  background-image: url(../images/event-16.png)
+
+#summary-cal
+  margin-top: 1em
+  .date
+    font-size: 90%
+    text-decoration: none
+    a:hover
+      color: #f50
+      text-decoration: underline

@@ -1,0 +1,115 @@
+#contact-list
+  height: 25em
+  max-height: 25em
+  overflow: -moz-scrollbars-vertical
+  overflow-y: auto
+  overflow-x: hidden
+  a
+
+#contact-view
+  width: 100%
+  height: 100%
+  vertical-align: top
+  table
+    margin: 18px
+  td
+    padding: 0 0 3pt 0
+    input
+      margin-right: 3pt
+
+td.contact-pic
+  text-align: right
+  vertical-align: middle
+
+#contact-pic
+  margin-right: 14px
+
+#contact-title, #contact-company, #contact-name
+  color: #000
+  margin: 0
+  /*  height: 100%;
+
+.contact-field
+  th
+    text-align: right
+    color: #999
+    text-transform: lowercase
+    min-width: 10em
+    display: block
+  .type-label
+    -moz-border-radius: 25% 0 0 25%
+    border: 1px solid transparent
+    padding: 0 12px 0 10px
+
+#contact-view.editing
+  .semicolon
+    visibility: hidden
+  .type-label
+    background: transparent url(../images/arrow.png) right no-repeat
+    &:hover
+      background: transparent url(../images/arrow.png) right no-repeat
+      background-color: #e4ebf3
+      /* color: #f1f5f9;
+      border-color: #d8e1ed
+      text-decoration: none
+      cursor: default
+  .contact-field.empty
+    input, textarea
+      color: #bbb
+    input:focus, textarea:focus
+      color: #000
+
+.contact-field
+  .value
+    padding: 2px
+    /*display: block;
+    /*float: left;
+  .sub-label
+    margin-left: 1em
+  input, textarea, select
+    display: none
+
+/* hidey bits
+
+#contact-view.editing .contact-field
+  .sub-label, .value
+    display: none
+  select, input, textarea
+    display: inline
+
+/* showey bits
+
+.contact-field
+  input
+    border: 1px solid transparent
+  textarea
+    border: 1px solid transparent
+    width: 100%
+    overflow: hidden
+  select, input:focus, textarea:focus
+    border: 1px solid #999
+    color: #000
+    background-color: #fff
+
+.del-field, .add-field
+  width: 16px
+  height: 16px
+
+.contact-field.empty
+  display: none
+
+#contact-view.editing .contact-field
+  &.empty
+    display: table-row
+  .del-field
+    background-image: url(../images/minus.png)
+    visibility: visible
+  .add-field
+    background-image: url(../images/plus.png)
+    visibility: hidden
+  &.empty.only .del-field
+    visibility: hidden
+  &.filled.last .add-field
+    visibility: visible
+
+.contact-field.last td
