@@ -1,0 +1,27 @@
+WeBongo
+
+Ruby Web UI Bongo-Project
+
+Initial Page for the WeBongo ruby application.
+
+I have started a project on github for the code.
+
+ git://github.com/lhaig/webongo.git
+
+If you want to help just let me know
+
+I have a rubyconnector project as well called RBongo which can be found here
+
+ git://github.com/lhaig/rbongo.git
+
+General Documentation can be found here
+
+http://www.bongo-project.org/Documentation
+
+The Protocol spec can be seen here
+
+http://www.bongo-project.org/Documentation/Store_Protocol
+
+We are also on IRC and mailing lists
+
+http://www.bongo-project.org/Getting_Involved
