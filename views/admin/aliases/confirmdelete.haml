@@ -1,0 +1,16 @@
+\%(include|header.tpl)s
+.breadcrumb
+  %p
+    %a{:href => "%(url|/)ssystem"} System
+    \&#187
+    %a{:href => "%(url|/)saliases/"} Aliases
+    \&#187
+    %a{:href => "#"} Removing domain
+%h1 Removing domain
+%p Are you sure you want to remove this domain? Once this operation is completed, you cannot revert back.
+%a.button{:href => "%(url|/)saliases/"}
+  %span Cancel
+%form{:method => "post"}
+  %span.button
+    %button{:type => "submit", :value => "Save"} Yes, I'm sure.
+\%(include|footer.tpl)s

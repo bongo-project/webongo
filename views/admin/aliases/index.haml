@@ -1,0 +1,25 @@
+\%(include|header.tpl)s
+.breadcrumb
+  %p
+    %a{:href => "%(url|/)ssystem"} System
+    \&#187
+    %a{:href => "%(url|/)saliases"} Aliases
+%h1 Domains
+#opsuccess.info{"tal:condition" => "dremove"} Domain removed successfully.
+%a.button{:href => "%(url|/)saliases/add"}
+  %span Add Domain
+%br/
+%p
+  %table.htable{:cellspacing => "0", :width => "100%%"}
+    %tr{"tal:attributes" => "class string:highlight${repeat/domain/odd}", "tal:repeat" => "domain domainlist"}
+      %td{:style => "height: 24px"}
+        %span{:style => "float: left; padding-left: 1em"}
+          %a{:style => "color: #fff", "tal:attributes" => "href domain/editlink"}
+            %span{"tal:content" => "domain/name"}
+        %span{:style => "float: right;"}
+          %a{"tal:attributes" => "href domain/editlink"}
+            %img{:alt => "Properties", :border => "0", :src => "/img/document-properties.png"}/
+          %a{"tal:attributes" => "href domain/deletelink"}
+            %img{:alt => "Delete", :border => "0", :src => "/img/document-delete.png"}/
+      %td{"tal:content" => "agent/name"} unknown agent
+\%(include|footer.tpl)s

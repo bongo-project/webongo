@@ -1,0 +1,23 @@
+\%(include|header.tpl)s
+.breadcrumb
+  %p
+    %a{:href => "%(url|/)sagents"} Agents
+%h1 Agents
+#msg.info{"tal:condition" => "info", "tal:content" => "info"} Something happened, but I'm not sure.
+#err.error{"tal:condition" => "error", "tal:content" => "error"} An error occured while processing your request. No more information is available.
+#opsuccess.info{"tal:condition" => "opsuccess"} Operation completed sucessfully.
+%table
+  %tr
+    %td{:valign => "top"}
+      #iconview
+        %div{:style => "float: left;"}
+          .icon
+            %a{:href => "%(url|/)sserver/"}
+              %img{:align => "middle", :alt => "Enable/Disable", :border => "0", :src => "../img/agent-control.png"}/
+              %span Enable/Disable
+        %div{:style => "float: left;", "tal:repeat" => "agent agentlist"}
+          .icon
+            %a{"tal:attributes" => "href agent/url"}
+              %img{:align => "middle", :border => "0", :src => "../img/agent-unknown.png", "tal:attributes" => "alt agent/name;src agent/img"}/
+              %span{"tal:content" => "agent/rname"} Unknown Agent
+\%(include|footer.tpl)s

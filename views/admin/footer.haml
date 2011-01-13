@@ -1,0 +1,18 @@
+/ END HAWKYE CONTENT
+%script{"tal:condition" => "opsuccess"}
+  window.setTimeout("new Effect.Highlight('opsuccess');", 1500); window.setTimeout("Effect.Fade('opsuccess');", 5000);<
+  \/script>
+  <script tal:condition="dremove">window.setTimeout("new Effect.Highlight('opsuccess');", 1500); window.setTimeout("Effect.Fade('opsuccess');", 5000);
+%script{"tal:condition" => "info"} window.setTimeout("new Effect.Highlight('msg');", 1500); window.setTimeout("Effect.Fade('msg');", 5000);
+%script{"tal:condition" => "error"} window.setTimeout("Effect.Pulsate('err');", 1000);
+#footer
+  Bongo
+  %i Hawkeye
+  Web Administration Tool - version
+  = succeed "." do
+    %span{"tal:content" => "release"} M3
+  = succeed "Released" do
+    %br/
+  under the GPL; see COPYING for details.
+/ Perform sidebar stuff.
+%script{:src => "/js/Admin.js", :type => "text/javascript"}

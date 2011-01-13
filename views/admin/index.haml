@@ -1,0 +1,25 @@
+<% content_for :header do %>
+%p This page enables you to enable and disable specific agents during runtime for change at next restart.
+%p
+  Please note that you
+  %strong
+    must restart
+    %c bongo-manager
+  for these changes to take effect, since they're only to do with the agent list at startup, not dynamic starting and stopping.
+%p
+  %div{:style => "text-align: center;", "tal:condition" => "success"}
+    %form{:method => "post"}
+      %input{:name => "command", :type => "hidden", :value => "agentstatus"}/
+      %table.htable{:cellspacing => "0"}
+        %tr.highlight.hrow
+          %th{:style => "padding: 10px;"} Enabled
+          %th{:style => "padding: 10px;"} Agent Name
+        %tr{"tal:attributes" => "class string:highlight${repeat/agent/odd}", "tal:repeat" => "agent agentlist"}
+          %td{:style => "height: 24px"}
+            %input{"tal:attributes" => "checked agent/enabled;name agent/name", :type => "checkbox"}/
+          %td{"tal:content" => "agent/name"} unknown agent
+      %br/
+      %span.button
+        %button{:type => "submit", :value => "Save"} Save
+%br/
+<% content_for :footer do %>

@@ -1,0 +1,57 @@
+\%(include|header.tpl)s
+.breadcrumb
+  %p
+    %a{:href => "%(url|/)s"} Desktop
+%h1 Welcome to Bongo!
+#msg.info{"tal:condition" => "info", "tal:content" => "info"} Something happened, but I'm not sure.
+#err.error{"tal:condition" => "error", "tal:content" => "error"} An error occured while processing your request. No more information is available.
+#opsuccess.info{"tal:condition" => "opsuccess"} Operation completed sucessfully.
+%img.floaty{:alt => "Welcome to Bongo", :src => "../img/desktop-big.png"}/
+%p Thank you for choosing Bongo as your calendaring and mail solution.
+%p This screen enables you to briefly overview your system status, and as a starting point to the different administration tasks available.
+%p
+  Help can be accessed by clicking on the help menu at any time.
+  %br>/
+  To get started, click on one of the menu items to your left.
+%br/
+%table.htable{:cellspacing => "0", :width => "100%%"}
+  %tr.highlight{:style => "height: 28px;"}
+    %td.hrow Agent Status
+    %td{:style => "text-align: center;"} Operation normal.
+    %td.hrow{:width => "16"}
+  %tr.highlight1
+    %td.hrow Bongo Updates
+    %td{:style => "text-align: center;"}
+      Running version:
+      %span{"tal:content" => "sw_current"} unknown
+      %br/
+      Latest available:
+      %span{"tal:content" => "sw_available"} unknown
+      %div{"tal:condition" => "sw_upgrade"} Upgrade to new version recommended.
+    %td.hrow{:width => "16"}
+      %img{:alt => "Warning", :src => "../img/dialog-warning.png", "tal:condition" => "sw_upgrade"}/
+  %tr.highlight{:style => "height: 28px;"}
+    %td.hrow System Status
+    %td{:style => "text-align: center;"}
+      Current processing load:
+      %span{"tal:content" => "load"} unknown
+    %td.hrow{:width => "16"}
+  %tr.highlight1{:style => "height: 28px;"}
+    %td.hrow Memory Usage
+    %td{:style => "text-align: center;", "tal:content" => "mem"} RAM
+    %td.hrow{:width => "16"}
+  %tr.highlight{:style => "height: 28px;"}
+    %td.hrow Load
+    %td{:style => "text-align: center;"} Unknown
+    %td.hrow{:width => "16"}
+%br/
+%table.htable{:cellspacing => "0", :width => "100%%"}
+  %tr.highlight{:style => "height: 28px;"}
+    %td.hrow{:colspan => "2"} Last 5 actions
+  %tr{"tal:attributes" => "class string:highlight${repeat/action/odd}", "tal:repeat" => "action actionlist"}
+    %td{:style => "padding-left: 1em;"}
+      %a{:style => "color: #eeeeec;", "tal:attributes" => "href action/href", "tal:content" => "action/title"} Unknown
+    %td.hrow{:width => "16"}
+      %a{"tal:attributes" => "href action/href", "tal:condition" => "action/img"}
+        %img{"tal:attributes" => "src action/img"}/
+\%(include|footer.tpl)s

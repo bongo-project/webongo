@@ -1,0 +1,38 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Bongo Web Administration » Login
+    %link{:href => "/img/bongo-favicon.ico", :rel => "icon", :type => "image/ico"}/
+    %link{:href => "/img/bongo-favicon.png", :rel => "icon", :type => "image/png"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %style{:media => "screen", :type => "text/css"}
+      @import url(/css/admin.css);
+    %script{:src => "/js/Browser.js", :type => "text/javascript"}
+  %body{:onload => "document.forms[0].elements[0].focus();"}
+    / Since TAL really doesn't like inline <script> element data.
+    %script{:src => "/js/BrowserCheck.js", :type => "text/javascript"}
+    .error{:style => "margin: 18px;", "tal:condition" => "badauth"} You have specified an invalid username or password.
+    .info{:style => "margin: 18px;", "tal:condition" => "loggedout"} You have successfully logged out!
+    #login
+      %form{:action => "login", :method => "post"}
+        %table{:style => "text-align: center; width: 100%%;"}
+          %tr
+            %td
+              %label{:for => "uname"} Username:
+            %td
+              %input#uname.username.inputbox{:name => "bongo-username", :type => "text"}/
+          %tr
+            %td
+              %label{:for => "pword"} Password:
+            %td
+              %input#pword.password.inputbox{:name => "bongo-password", :type => "password"}/
+          %tr
+            %td
+              %label{:for => "lang"} Language:
+            %td
+              %select#lang.lang{:name => "lang"}
+                %option{:value => "en"} English
+                / <option value="fr">Français</option>
+        .submit
+          %span.button
+            %button{:type => "submit", :value => "Log in"} Log in
