@@ -43,38 +43,33 @@ option.underline {
 .msg-compose .toolbar {
     border: 1px solid #ddd;
     background-color: #eee;
-    /*
-    */
     padding: 3px;
     margin: 0.5em 0 0;
-    overflow: auto;
 }
-.msg-compose .toolbar hr {
-    border: 0;
-    margin: 5px;
-    padding: 0;
-    float: left;
+.msg-compose .toolbar .split {
+    padding-right: 1px;
+    display: inline;
 }
 .icon,
 .icon-plus,
 .icon-minus {
-    width: 16px; height: 16px;
+    width: 24px; height: 24px;
     background: transparent no-repeat center;
     vertical-align: middle;
 }
 .icon-plus {
-    background-image: url(../images/plus.png);
+    background-image: url(../img/plus.png);
 }
 .icon-minus {
-    background-image: url(../images/minus.png);
+    background-image: url(../img/minus.png);
 }
 
 .msg-compose th.attach .icon,
 .msg-compose .toolbar .icon {
     border: 1px solid transparent;
-    padding: 2px;
+    /*padding: 2px;
     display: block;
-    float: left;
+    float: left;*/
 }
 .msg-compose .toolbar .icon.selected {
     opacity: 0.9;

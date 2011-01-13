@@ -1,7 +1,7 @@
 /*
     Bongo web administration interface (aka Hawkeye) stylesheet
     (c) 2007 Alexander Hixon <hixon.alexander@mediati.org> - see COPYING for details
-    Last modified: Sunday May 20, 2007
+    Last modified: Monday Sep 3, 2007
 
     =======[ Global Styles ]=======
 */
@@ -17,7 +17,7 @@ body {
 
 #body-override {
     color: #2e3436;
-    background: url('/images/bg.png');
+    background: url('/img/bg.png');
     background-repeat: repeat-x;
     background-color: #fff;
     margin-top: 25px;
@@ -40,7 +40,7 @@ body {
     
     text-align: center;
     padding: 0px;
-    background-image: url('../images/login-pane.png');
+    background-image: url('/img/login-pane.png');
     /*background-repeat: no-repeat; /* Make sure this doesn't actually happen. */
     overflow: none;
 }
@@ -66,21 +66,21 @@ body {
 }
 
 input, select {
-    color: #555753;
-    background-color: #eeeeec;
-    border: 1px solid #2e3436;
+    color: #2e3436;
+    background-color: #fff;
+    border: 1px solid #888a85;
 }
 
 .lang {
-    background-image: url('../images/locale.png');
+    background-image: url('/img/locale.png');
 }
 
 .username {
-    background-image: url('../images/user.png');
+    background-image: url('/img/user.png');
 }
 
 .password {
-    background-image: url('../images/locked.png');
+    background-image: url('/img/locked.png');
 }
 
 .password, .username, .lang {
@@ -108,14 +108,23 @@ p {
     color: #2e3436;  /* Tango DARK-GREY */
 }
 
+a {
+    text-decoration:none;
+    color: #2e3436;
+}
+
 #page {
-    background: url('/images/cbg.png');
+    background: url('/img/cbg.png');
     background-repeat: repeat-x;
     background-color: #eeeeec;  /* Tango GREY */			
-    margin-left: 155px; /* Push across width of sidebar, minus 10px, for bg behind round corner */
-	padding-left: 20px; /* Prints BG for 10px, now flush with sidebar */
+    /*margin-left: 155px; /* Push across width of sidebar, minus 10px, for bg behind round corner */
+	/*padding-left: 20px; /* Prints BG for 10px, now flush with sidebar */
+	margin: 0px;
+	padding: 0px;
+	margin-left: 175px;
+	/*float: right;*/
 	padding-top: 6px;
-    min-height: 500px;
+    min-height: 390px;
     
     -moz-border-radius-bottomright: 20px;
     -khtml-border-radius-bottomright: 20px;
@@ -138,31 +147,81 @@ p {
     display: block;
 }
 
-/*
-    =======[ Sidebar Styles ]=======
-*/
-
-#sidebar {
-    color: #eeeeec; /* Tango WHITE */
-    background: url('/images/sbg.png');
-    background-repeat: no-repeat;
-    background-color: #2e3436;  /* Tango DARK-GREY */
-    float: left;
-    min-height: 500px;
-    width: 175px;
-
-    text-align: right;
-    margin-right: 0px;
-    padding-right: 0px;
-    padding-bottom: 6px;
-
-    -moz-border-radius-bottomleft: 20px;
+#wrap {
+    background: url('/img/cbg.png');
+    background-repeat: repeat-x;
+    background-color: #eeeeec;  /* Tango GREY */			
+    /*margin-left: 155px; /* Push across width of sidebar, minus 10px, for bg behind round corner */
+	/*padding-left: 20px; /* Prints BG for 10px, now flush with sidebar */
+	margin: 0px;
+	padding: 0px;
+	/*padding-left: 175px;*/
+	/*padding-top: 6px;*/
+	
+	-moz-border-radius-bottomleft: 20px;
     -khtml-border-radius-bottomleft: 20px;
     border-radius-bottomleft: 20px;
 
     -moz-border-radius-bottomright: 20px;
     -khtml-border-radius-bottomright: 20px;
     border-radius-bottomright: 20px;
+    
+    padding-bottom: 6px;
+    margin-bottom: 1em;
+}
+
+#footer {
+    margin-bottom: 1em;
+    text-align: right;
+    padding-right: 2em;
+    font-size: 85%;
+    display: block;
+}
+
+/*
+    =======[ Sidebar Styles ]=======
+*/
+
+#sidebar-wrap {
+    float: left;
+    width: 175px;
+    
+    /*height: 500px;*/
+    
+    margin: 0px;
+    padding: 0px;
+    
+    background: url('/img/sbg.png');
+    background-repeat: no-repeat;
+    
+    color: #eeeeec; /* Tango WHITE */
+    
+    text-align:center;
+}
+
+nlink a, a.nlink {
+    color: #eeeeec;
+    border-bottom: 0px none;
+}
+
+#sidebartoggle {
+    display: inline;
+    position:relative;
+    top: -50px;
+}
+
+#sidebar {
+    height: 400px;
+    /*height: 100%;   /* Always make sidebar as big as content. */
+
+    /*background-color: #2e3436;  /* Tango DARK-GREY */
+
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+    /*margin-right: 0px;
+    padding-right: 0px;
+    padding-bottom: 6px;*/
 }
 
 .helpitem {
@@ -170,7 +229,7 @@ p {
 }
 
 .selecteditem {
-    background-image: url('/images/sel.png');
+    background-image: url('/img/sel.png');
     width: 175px;
     background-repeat: no-repeat;
     color: #2e3436;
@@ -272,17 +331,69 @@ ul.nav{
 }
 
 .error {
-    background-image: url('/images/dialog-error-32.png');
+    background-image: url('/img/dialog-error-32.png');
     background-color: #a40000;
     color: #eeeeec;
     border: 3px solid #cc0000;
 }
 
 .info {
-    background-image: url('/images/dialog-information-32.png');
+    background-image: url('/img/dialog-information-32.png');
     background-color: #3465a4;
     color: #eeeeec;
     border: 3px solid #204a85;
+}
+
+/*
+    ========[ Icon View ]=======
+*/
+
+#iconview {
+    text-align:center;
+    vertical-align:middle;
+}
+
+#iconview div.icon {
+    margin:3px;
+}
+
+#iconview div.icon a {
+    border:1px solid #d3d7cf;
+    display:block;
+    float:left;
+    height:97px !important;
+    padding:2px 5px 1px;
+    text-decoration:none;
+    vertical-align:middle;
+    width:108px !important;
+}
+
+#iconview div.icon a:link {
+    color:#888a85;
+}
+
+#iconview div.icon a:hover {
+    background-color:#d3d7cf;
+    border:1px solid #2e3436;
+    color:#2e3436;
+    padding:3px 4px 0px 6px;
+}
+
+#iconview div.icon a:active {
+    color:#888a85;
+}
+
+#iconview div.icon a:visited {
+    color:#888a85;
+}
+
+#iconview div.icon img {
+    margin-top:13px;
+}
+
+#iconview div.icon span {
+    display:block;
+    padding-top:3px;
 }
 
 /*
@@ -320,8 +431,8 @@ a.button, span.button, del.button {
 
 a.button, span.button, del.button,
 a.button span, span.button button, span.button input, del.button span {
-    background-image:url('/images/form_buttons.png');
-    _background-image:url('/images/form_buttons.gif');
+    background-image:url('/img/form_buttons.png');
+    _background-image:url('/img/form_buttons.gif');
 }
 
 

@@ -12,7 +12,7 @@ form
 p { 
   margin: 0.5em 0;
 }
-input, textarea, select, option, table {
+input, select, option, table {
     font-family: inherit;
     font-size: inherit;
     /* we probably shouldn't inherit the color without inheriting
@@ -171,7 +171,7 @@ a[name] {
   width: 288px;
   background: transparent repeat-y center;
   vertical-align: middle;
-  background-image: url(../images/top-gradient.png);
+  background-image: url(../img/top-gradient.png);
 }
 #notification {
     left: auto;
@@ -205,8 +205,8 @@ a[name] {
     body.eng-webkit #search input[type="button"] { display: none; }
 
 #page-frame {
-    background: #1d3980 url(../images/login-bg-bottom.png) repeat-x 0 0;
-    background: #e7e4ef url(../images/bg-page.png) repeat-x 0 0;
+    background: #1d3980 url(../img/login-bg-bottom.png) repeat-x 0 0;
+    background: #e7e4ef url(../img/bg-page.png) repeat-x 0 0;
     width: 100%;
     height: 100%;
 }
@@ -267,12 +267,12 @@ body.eng-msie #page-frame {
 
         /* Sidebar rounded corners skin */
         /*
-        #sidebar-nav .t { background-image: url(../images/side-tl.png); }
-        #sidebar-nav .tr { background-image: url(../images/side-tr.png); }
-        #sidebar-nav .b { background-image: url(../images/side-bl.png); }
-        #sidebar-nav .br { background-image: url(../images/side-br.png); }
-        #sidebar-nav .c { background-image: url(../images/side-cl.png); }
-        #sidebar-nav .cr { background-image: url(../images/side-cr.png); }
+        #sidebar-nav .t { background-image: url(../img/side-tl.png); }
+        #sidebar-nav .tr { background-image: url(../img/side-tr.png); }
+        #sidebar-nav .b { background-image: url(../img/side-bl.png); }
+        #sidebar-nav .br { background-image: url(../img/side-br.png); }
+        #sidebar-nav .c { background-image: url(../img/side-cl.png); }
+        #sidebar-nav .cr { background-image: url(../img/side-cr.png); }
         */
 
         #sidebar-nav .action { 
@@ -313,7 +313,7 @@ body.eng-msie #page-frame {
                 border: 1px solid #95a9df;
                 border-bottom-color: #5f85bf;
                 border-width: 1px 0;
-                background: #bbceea url(../images/bg-selected.png) repeat-x 50% 50%;
+                background: #bbceea url(../img/bg-selected.png) repeat-x 50% 50%;
             }
             #sidebar-nav .tab.selected a {
                 padding-top: 5px;
@@ -365,7 +365,7 @@ body.eng-msie #page-frame {
             }
 
             #sidebox-calendar .month-widget a.today { 
-                background-image: url(../images/cal-today.png);
+                background-image: url(../img/cal-today.png);
                 background-color: #fff;
                 border: 1px solid #ffba57;
                 color: #ee8d03;
@@ -388,7 +388,7 @@ body.eng-msie #page-frame {
             #sidebox-calendar .prev, 
             #sidebox-calendar .header, 
             #sidebox-calendar .next {
-                background: #e6e6e6 url(../images/bg-side-title.png) repeat-x 50% 50%;
+                background: #e6e6e6 url(../img/bg-side-title.png) repeat-x 50% 50%;
                     border-bottom: 1px solid #ccc;
             }
 
@@ -424,10 +424,10 @@ body.eng-msie #page-frame {
                     display: block;
                 }
                 #sidebox-calendar td.prev a {
-                    background-image: url(../images/go-previous.png) 
+                    background-image: url(../img/go-previous.png) 
                 }
                 #sidebox-calendar td.next a {
-                    background-image: url(../images/go-next.png);
+                    background-image: url(../img/go-next.png);
                 }
 
             #sidebox-calendar .todaylink p {
@@ -510,7 +510,7 @@ body.eng-msie #page-frame {
 
 #sourcebar,
 #toolbar { 
-    background: #fcfcfc url(../images/bg-toolbar.png) repeat-x 0 100%;
+    background: #fcfcfc url(../img/bg-toolbar.png) repeat-x 0 100%;
     border-bottom: 1px solid #bbb;
     color: #999;
     padding: 6px 12px;
@@ -704,16 +704,16 @@ body.eng-msie #page-frame {
 #summary-tab { margin-top: 0.5em !important; }
 
 /* Tab icons */
-#summary-tab-href { background-image: url(../images/home-16.png); }
-#mail-tab-href { background-image: url(../images/message-16.png); }
-#calendar-tab-href { background-image: url(../images/calendar-16.png); }
-#addressbook-tab-href { background-image: url(../images/contact-16.png); }
+#summary-tab-href { background-image: url(../img/home-16.png); }
+#mail-tab-href { background-image: url(../img/message-16.png); }
+#calendar-tab-href { background-image: url(../img/calendar-16.png); }
+#addressbook-tab-href { background-image: url(../img/contact-16.png); }
 
 /* Again, for IE6 */
-.eng-msie.engv-6 #summary-tab-href { background-image: url(../images/home-16.gif); }
-.eng-msie.engv-6 #mail-tab-href { background-image: url(../images/message-16.gif); }
-.eng-msie.engv-6 #calendar-tab-href { background-image: url(../images/calendar-16.gif); }
-.eng-msie.engv-6 #addressbook-tab-href { background-image: url(../images/contact-16.gif); }
+.eng-msie.engv-6 #summary-tab-href { background-image: url(../img/home-16.gif); }
+.eng-msie.engv-6 #mail-tab-href { background-image: url(../img/message-16.gif); }
+.eng-msie.engv-6 #calendar-tab-href { background-image: url(../img/calendar-16.gif); }
+.eng-msie.engv-6 #addressbook-tab-href { background-image: url(../img/contact-16.gif); }
 
 #search-tab {
   width: 100%;
@@ -760,7 +760,7 @@ body.eng-msie #page-frame {
 
 .sidebox li.selected {
   background-color: #7ed12d;
-  background: #7bc828 url(../images/navselhilight.png) repeat-x top;
+  background: #7bc828 url(../img/navselhilight.png) repeat-x top;
 }
 
 .sidebox li.selected a {
@@ -835,7 +835,7 @@ body.eng-msie #page-frame {
 #sidebox-sourcelist li a.selected {
     /*
   background-color: #7ed12d;
-  background: #7bc828 url(../images/navselhilight.png) repeat-x top;
+  background: #7bc828 url(../img/navselhilight.png) repeat-x top;
   */
   background-color: #dfd3ed;
 }
@@ -887,13 +887,16 @@ body.eng-msie #page-frame {
 .right { float: right; }
 
 /*** Forms style ***/
-input,
-textarea {
+input {
   font-family: inherit;
   font-size: inherit;
   /* we probably shouldn't inherit the color without inheriting
      background? */
   /* color: inherit; */
+}
+
+input,
+textarea {
   padding: 1px;
 }
 input[type="text"],
@@ -904,7 +907,7 @@ button,
 textarea {
   border: 1px solid #bbbed0;
   padding: 2px;
-  background: #fff url(../images/grad-textarea.png) repeat-x top;
+  background: #fff url(../img/grad-textarea.png) repeat-x top;
 }
 input[type="text"]:focus,
 input[type="search"]:focus,
@@ -935,7 +938,7 @@ input.empty { color: #999; }
 /* Due to IE6's braindeadness, we cannot combine this with CSS that includes [type=""], as below */
 .toggle-button {
     -moz-border-radius: 2px;
-    background-image: url(../images/bg-button.png);
+    background-image: url(../img/bg-button.png);
     background-position: bottom;
     background-repeat: repeat-x;
     font-weight: normal;
@@ -956,7 +959,7 @@ input.empty { color: #999; }
 /* The comment above applies here, plus IE6 applies .toggle-button.selected 
    to all .selected unless it's specifically specified, as below */
 .toggle-button-group .toggle-button.selected {
-    background-image: url(../images/bg-button-selected.png);
+    background-image: url(../img/bg-button-selected.png);
     background-color: #ffd69b;
 }
 
@@ -966,7 +969,7 @@ body.os-x11.eng-gecko input[type="reset"],
 body.os-x11.eng-gecko input[type="button"],
 body.os-x11.eng-gecko button {
     -moz-border-radius: 2px;
-    background-image: url(../images/bg-button.png);
+    background-image: url(../img/bg-button.png);
     background-position: bottom;
     background-repeat: repeat-x;
     font-weight: normal;
@@ -1004,7 +1007,7 @@ body.os-x11.eng-gecko input[type="submit"]:active,
 body.os-x11.eng-gecko input[type="reset"]:active,
 body.os-x11.eng-gecko input[type="button"]:active,
 body.os-x11.eng-gecko button:active {
-    background-image: url(../images/bg-button-pressed.png);
+    background-image: url(../img/bg-button-pressed.png);
     background-position: top;
     -moz-border-top-colors: #ce9d59 #fcf7f0 transparent;
     -moz-border-right-colors: #ce9d59 #fcf7f0 transparent;
@@ -1098,10 +1101,10 @@ body.os-x11.eng-gecko select {
     }*/
 
     body.os-x11.eng-gecko input[type="checkbox"] {
-        background-image: url(../images/grad-textarea.png);
+        background-image: url(../img/grad-textarea.png);
         background-position: top;
         background-repeat: repeat-x;
-        background: #fff url(../images/grad-textarea.png) repeat-x top;
+        background: #fff url(../img/grad-textarea.png) repeat-x top;
     }
 
 #content-iframe {
@@ -1146,17 +1149,17 @@ body.os-x11.eng-gecko select {
         border: 0;
         float: left;
         width: 50%;
-        background: #e6e6e6 url(../images/bg-side-title.png) repeat-x 50% 50%;
+        background: #e6e6e6 url(../img/bg-side-title.png) repeat-x 50% 50%;
         border-top: 1px solid #eee;
     }
     #sidebox-sidebook .notebook-tabs a:hover {
-        background: #f6f6f6 url(../images/bg-side-title-hover.png) repeat-x 50% 50%;
+        background: #f6f6f6 url(../img/bg-side-title-hover.png) repeat-x 50% 50%;
     }
 
     #sidebox-sidebook .notebook-tabs a.selected { 
         margin: 0;
         padding: 0;
-        background: #bbceea url(../images/bg-selected.png) repeat-x 50% 50%;
+        background: #bbceea url(../img/bg-selected.png) repeat-x 50% 50%;
         border-color: #cfe5fb;
     }
     #sidebox-sidebook .notebook-tabs a img { 
@@ -1203,3 +1206,20 @@ pre {
 }
 
 #tzlabel { color: #fff; }
+
+#search-no-results
+{
+  padding-top: 25%;
+}
+
+#nomail-summary
+{
+  padding-top: 50%;
+  text-align: center;
+}
+
+#preferences-container
+{
+    padding-right: 2em;
+    padding-left: 2em;
+}
