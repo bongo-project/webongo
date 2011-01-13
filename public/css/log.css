@@ -1,0 +1,106 @@
+/*
+ * log.css
+ * Visual themeing for browser-based logging provided by Log.js
+ *
+ * (c) 2008 Alexander Hixon <hixon.alexander@mediati.org>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+
+
+#logbox {
+    display: block;
+    z-index: 1000;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+}
+
+#log {
+    font-family: Inconsolata, Dejavu Sans Mono, monospace;
+    background-color: #2e3436;
+    color: #eeeeec;
+    padding: 2px;
+    height: 100px;
+    overflow: auto;
+}
+
+#jsprompt {
+    font-family: Inconsolata, Dejavu Sans Mono, monospace;
+    background-color: #555753;
+    color: #eeeeec;
+    
+    border: 0px none;
+    width: 100%;
+}
+
+#log div.error {
+    color: #ef2929;
+}
+
+#log div.debug {
+    color: #73d216;
+}
+
+#log div.warn {
+    color: #f57900;
+}
+
+#log .group div.error {
+    color: #a40000;
+}
+
+#log a, #log a:active {
+    text-decoration: none;
+    border-bottom: 1px dotted #babdb6;
+    color: #eeeeec;
+}
+
+#log .groupbox a, #log .groupbox a:active {
+    color: #2e3436;
+}
+
+#log div.a {
+    color: #eeeeec;
+}
+
+#log a:hover {
+    border-bottom: 0px none;
+}
+
+#log .titlespan {
+    background-color: #888a85;
+    width: 100%;
+}
+
+.group {
+    padding: 2px;
+    background-color: #555753;
+}
+
+.groupbox {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    border: 1px solid #babdb6;
+}
+
+#log .floatright {
+    float: right;
+    color: #eeeeec;
+    /*padding: 2px;
+    display: inline;*/
+}
