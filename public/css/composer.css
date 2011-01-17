@@ -58,10 +58,10 @@ option.underline {
     vertical-align: middle;
 }
 .icon-plus {
-    background-image: url(../img/plus.png);
+    background-image: url(images/plus.png);
 }
 .icon-minus {
-    background-image: url(../img/minus.png);
+    background-image: url(images/minus.png);
 }
 
 .msg-compose th.attach .icon,

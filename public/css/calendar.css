@@ -87,7 +87,7 @@
                 padding: 3px 4px; 
             }
             .calendar th a:hover { 
-                background: transparent url(../img/cal-selected.png);
+                background: transparent url(images/cal-selected.png);
             }
             /* IE-only stipple */
             .eng-msie.engv-6 .calendar th a:hover { 
@@ -103,18 +103,18 @@
 }
 
     .calendar td.offmonth {
-        background: #fcfcfc url(../img/cal-offmonth.png);
+        background: #fcfcfc url(images/cal-offmonth.png);
         color: #bababa;
     }
     .calendar.cellview td.offmonth { background-image: none; }
 
     .calendar tr > td.today {
-        background-image: url(../img/cal-today.png);
+        background-image: url(images/cal-today.png);
         color: #b99508;
     }
     /* IE6 stipple BG for today */
     .eng-msie.engv-6 .calendar td.today {
-        background-image: url(../img/cal-today-stipple.png);
+        background-image: url(images/cal-today-stipple.png);
         color: #b99508;
     }
     .calendar td.offmonth.today {
@@ -368,7 +368,7 @@
     }
     .columnview .timed-events .buble.start > .item {
         /*
-        background: url(../img/grad-cal-title.png) repeat-x 0 -480px;
+        background: url(images/grad-cal-title.png) repeat-x 0 -480px;
         */
     }
     .columnview .timed-events .buble.start.popped-out .item {
@@ -413,7 +413,7 @@
     margin: -0.2em;
     margin-bottom: 0.25em;
     /*
-    background: url(../img/stipple-1bit.png);
+    background: url(images/stipple-1bit.png);
     */
 }
 .columnview .timed-events .buble .item .title {
@@ -451,7 +451,7 @@
 }
 
 .columnview .buble.end .item .resize {
-    background: transparent url(../img/grippy-v.png) no-repeat bottom center;
+    background: transparent url(images/grippy-v.png) no-repeat bottom center;
     height: 12px;
     display: block;
     position: absolute;
@@ -462,19 +462,19 @@
     opacity: 0.5;
     cursor: resize !important;
 }
-.eng-msie.engv-6 .columnview .buble.end .item .resize { background-image: url(../img/grippy-v.gif); }
+.eng-msie.engv-6 .columnview .buble.end .item .resize { background-image: url(images/grippy-v.gif); }
 *
 .columnview .buble.end.popped-out .item .resize { 
     opacity: 1; 
     margin: 0 -1px -3px;
 }
 .columnview .untimed-events .buble.end .item .resize {
-    background: transparent url(../img/grippy-h.png) no-repeat right;
+    background: transparent url(images/grippy-h.png) no-repeat right;
     width: 12px;
     height: 100%;
     margin: 0;
 }
-.columnview .untimed-events .buble.end .item .resize { background-image: url(../img/grippy-h.gif); }
+.columnview .untimed-events .buble.end .item .resize { background-image: url(images/grippy-h.gif); }
 
 .columnview .untimed-events .buble.end.popped-out .item .resize {
     margin: 0 -2px 0;
@@ -518,7 +518,7 @@
 /*** Untimed continuation "rules" ***/
 .calendar .untimed-events .item {
     background-repeat: no-repeat;
-    background-image: url(../img/continued-right.png);
+    background-image: url(images/continued-right.png);
     background-position: right;
     margin: 1px 0;
     padding-top: 2px 3px;
@@ -527,7 +527,7 @@
 }
     .calendar .untimed-events .item strong {
         background-repeat: no-repeat;
-        background-image: url(../img/continued-left.png);
+        background-image: url(images/continued-left.png);
         background-position: left;
         padding-left: 16px;
     }
@@ -728,12 +728,12 @@
 
         .timestrip .even,
         .timestrip .odd {
-            background: url(../img/bg-timestrip.png) no-repeat 100% 50%;
+            background: url(images/bg-timestrip.png) no-repeat 100% 50%;
         }
 
         .timestrip-wrapper.right .timestrip .even,
         .timestrip-wrapper.right .timestrip .odd {
-            background: url(../img/bg-timestrip-right.png) no-repeat 0% 50%;
+            background: url(images/bg-timestrip-right.png) no-repeat 0% 50%;
         }
 
         .timestrip div .timeval { 
@@ -774,73 +774,73 @@
     #new-event-popup .popup-buble .t,
     #sidebox-calendar .popup-buble .t,
     .popup-buble .t {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .tr,
     #sidebox-calendar .popup-buble .tr,
     .popup-buble .tr {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .b,
     #sidebox-calendar .popup-buble .b,
     .popup-buble .b {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .br,
     #sidebox-calendar .popup-buble .br,
     .popup-buble .br {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .c,
     #sidebox-calendar .popup-buble .c,
     .popup-buble .c {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .cr,
     #sidebox-calendar .popup-buble .cr,
     .popup-buble .cr {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .t,
     #sidebox-calendar .popup-buble .t,
     .popup-buble .t {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .tr,
     #sidebox-calendar .popup-buble .tr,
     .popup-buble .tr {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .b,
     #sidebox-calendar .popup-buble .b,
     .popup-buble .b {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .br,
     #sidebox-calendar .popup-buble .br,
     .popup-buble .br {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .c,
     #sidebox-calendar .popup-buble .c,
     .popup-buble .c {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
     #new-event-popup .popup-buble .cr,
     #sidebox-calendar .popup-buble .cr,
     .popup-buble .cr {
-        background-image: url(../img/popup.png);
+        background-image: url(images/popup.png);
     }
 
 
@@ -1009,28 +1009,28 @@
     .rrule-editor.end-by-count  .controls.end-by-count  {display: block;}
 
 .icon { height: 16px; width: 16px; }
-.icon.web { background-image: url(../img/applications-internet.png); }
-.icon.bongo { background-image: url(../img/bongo-favicon.png); }
-.icon.readwrite, .icon.publish { background-image: url(../img/accessories-text-editor.png); }
-.icon.readonly, .icon.protect { background-image: url(../img/emblem-readonly.png); }
-.icon.searchable { background-image: url(../img/system-search.png); }
-.icon.info { background-image: url(../img/dialog-information.png); }
+.icon.web { background-image: url(images/applications-internet.png); }
+.icon.bongo { background-image: url(images/bongo-favicon.png); }
+.icon.readwrite, .icon.publish { background-image: url(images/accessories-text-editor.png); }
+.icon.readonly, .icon.protect { background-image: url(images/emblem-readonly.png); }
+.icon.searchable { background-image: url(images/system-search.png); }
+.icon.info { background-image: url(images/dialog-information.png); }
 
-.icon.calendars { background-image: url(../img/icon-simple-calendars.png); }
-.icon.addressbook { background-image: url(../img/icon-simple-contacts.png); }
-.icon.todos { background-image: url(../img/icon-simple-todos.png); }
+.icon.calendars { background-image: url(images/icon-simple-calendars.png); }
+.icon.addressbook { background-image: url(images/icon-simple-contacts.png); }
+.icon.todos { background-image: url(images/icon-simple-todos.png); }
 
 /* Icons for IE6 */
-.icon.web { background-image: url(../img/applications-internet.gif); }
-.icon.bongo { background-image: url(../img/bongo-favicon.gif); }
-.icon.readwrite, .icon.publish { background-image: url(../img/accessories-text-editor.gif); }
-.icon.readonly, .icon.protect { background-image: url(../img/emblem-readonly.gif); }
-.icon.searchable { background-image: url(../img/system-search.gif); }
-.icon.info { background-image: url(../img/dialog-information.gif); }
+.icon.web { background-image: url(images/applications-internet.gif); }
+.icon.bongo { background-image: url(images/bongo-favicon.gif); }
+.icon.readwrite, .icon.publish { background-image: url(images/accessories-text-editor.gif); }
+.icon.readonly, .icon.protect { background-image: url(images/emblem-readonly.gif); }
+.icon.searchable { background-image: url(images/system-search.gif); }
+.icon.info { background-image: url(images/dialog-information.gif); }
 
-.eng-msie.engv-6 .icon.calendars { background-image: url(../img/icon-simple-calendars.gif); }
-.eng-msie.engv-6 .icon.addressbook { background-image: url(../img/icon-simple-contacts.gif); }
-.eng-msie.engv-6 .icon.todos { background-image: url(../img/icon-simple-todos.gif); }
+.eng-msie.engv-6 .icon.calendars { background-image: url(images/icon-simple-calendars.gif); }
+.eng-msie.engv-6 .icon.addressbook { background-image: url(images/icon-simple-contacts.gif); }
+.eng-msie.engv-6 .icon.todos { background-image: url(images/icon-simple-todos.gif); }
 
 /* Next and previous links */
 .month-next,
@@ -1066,5 +1066,5 @@
         vertical-align: middle;
     }
 
-    .month-prev img { background-image: url(../img/go-previous.png); }
-    .month-next img { background-image: url(../img/go-next.png); }
+    .month-prev img { background-image: url(images/go-previous.png); }
+    .month-next img { background-image: url(images/go-next.png); }

@@ -99,11 +99,11 @@ div.star {
     padding:0px;
     width: 16px;
     height: 16px;
-    background: url(../img/star-widget.png) 0 -16px no-repeat;
+    background: url(images/star-widget.png) 0 -16px no-repeat;
     text-indent: -1000em;
 }
 /* for IE6 only */
-.eng-msie.engv-6 div.star { background-image: url(../img/star-widget.gif); }
+.eng-msie.engv-6 div.star { background-image: url(images/star-widget.gif); }
 
 hr.hresize,
 hr.vresize {
@@ -385,33 +385,33 @@ hr.vresize {
     }
 
     .popup-container .pointer.above {
-        background-image: url(../img/info-pointer-down.png);
+        background-image: url(images/info-pointer-down.png);
         bottom: -3px;
         left: -8px;
     }
     
     .popup-container .pointer.below { 
-        background-image: url(../img/info-pointer-up.png);
+        background-image: url(images/info-pointer-up.png);
         top: -3px;
         left: -8px;
     }
     
     .popup-container .pointer.right { 
-        background-image: url(../img/info-pointer-left.png);
+        background-image: url(images/info-pointer-left.png);
         top: -8px;
         left: -3px;
     }
 
     .popup-container .pointer.left { 
-        background-image: url(../img/info-pointer-right.png);
+        background-image: url(images/info-pointer-right.png);
         top: -8px;
         right: -3px;
     }
 
-    .eng-msie.engv-6 .popup-container .pointer.above { background-image: url(../img/info-pointer-down.gif); }
-    .eng-msie.engv-6 .popup-container .pointer.below { background-image: url(../img/info-pointer-up.gif); }
-    .eng-msie.engv-6 .popup-container .pointer.right{ background-image: url(../img/info-pointer-left.gif); }
-    .eng-msie.engv-6 .popup-container .pointer.left { background-image: url(../img/info-pointer-right.gif); }
+    .eng-msie.engv-6 .popup-container .pointer.above { background-image: url(images/info-pointer-down.gif); }
+    .eng-msie.engv-6 .popup-container .pointer.below { background-image: url(images/info-pointer-up.gif); }
+    .eng-msie.engv-6 .popup-container .pointer.right{ background-image: url(images/info-pointer-left.gif); }
+    .eng-msie.engv-6 .popup-container .pointer.left { background-image: url(images/info-pointer-right.gif); }
 
 .popup-buble {
     position: relative;
@@ -448,7 +448,7 @@ hr.vresize {
         right: 12px;
         width: 20px;
         height: 20px;
-        background: url(../img/x.png) 0 0;
+        background: url(images/x.png) 0 0;
         cursor: pointer; cursor: hand; 
     }
     
@@ -464,26 +464,26 @@ hr.vresize {
         background-repeat: no-repeat;
     }
         .popup-buble .pointer.right {
-            background-image: url(../img/info-pointer-right.png);
+            background-image: url(images/info-pointer-right.png);
             right: -20px;
         }
         .popup-buble .pointer.left { 
-            background-image: url(../img/info-pointer-left.png);
+            background-image: url(images/info-pointer-left.png);
             left: -23px;
         }
         .popup-buble .pointer.up { 
-            background-image: url(../img/info-pointer-up.png);
+            background-image: url(images/info-pointer-up.png);
             top: -23px;
         }
         .popup-buble .pointer.down {
-            background-image: url(../img/info-pointer-down.png);
+            background-image: url(images/info-pointer-down.png);
             bottom: -20px;
         }
 
-        .eng-msie.engv-6 .popup-buble .pointer.right { background-image: url(../img/info-pointer-right.gif); }
-        .eng-msie.engv-6 .popup-buble .pointer.left { background-image: url(../img/info-pointer-left.gif); }
-        .eng-msie.engv-6 .popup-buble .pointer.up { background-image: url(../img/info-pointer-up.gif); }
-        .eng-msie.engv-6 .popup-buble .pointer.down { background-image: url(../img/info-pointer-down.gif); }
+        .eng-msie.engv-6 .popup-buble .pointer.right { background-image: url(images/info-pointer-right.gif); }
+        .eng-msie.engv-6 .popup-buble .pointer.left { background-image: url(images/info-pointer-left.gif); }
+        .eng-msie.engv-6 .popup-buble .pointer.up { background-image: url(images/info-pointer-up.gif); }
+        .eng-msie.engv-6 .popup-buble .pointer.down { background-image: url(images/info-pointer-down.gif); }
 
 /* popup-buble IE6 hacks */        
 .eng-msie.engv-6 .t, .eng-msie.engv-6 .tr, .eng-msie.engv-6 .c, .eng-msie.engv-6 .cr, .eng-msie.engv-6 .b, .eng-msie.engv-6 .br { display: none; }

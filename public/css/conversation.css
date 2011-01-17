@@ -52,7 +52,7 @@
 
         .msg .face {
             display: block;
-            background: transparent url(../img/contact-unknown.png) no-repeat;
+            background: transparent url(images/contact-unknown.png) no-repeat;
             width: 48px;
             height: 48px;
             background-position: center;
@@ -106,7 +106,7 @@
         .msg .msg-subject { overflow: hidden; }
 
         .msg .people:hover {
-            /*background: transparent url(../img/arrow.png) right no-repeat;*/
+            /*background: transparent url(images/arrow.png) right no-repeat;*/
             background-color: #e4ebf3;
             padding: 0 1px 0 1px;
             -moz-border-radius: 25%;
@@ -155,7 +155,7 @@
 
         .msg .msg-content > .msg-header {
             /* Hide IE/Win 6 and below */
-            background: transparent url(../img/grad.png) repeat-x top;
+            background: transparent url(images/grad.png) repeat-x top;
         }
         .msg .msg-content .msg-header a {
             text-decoration: none;
@@ -207,15 +207,15 @@
     }
     .msg-actions a.reply {
         padding-left: 28px;
-        background: url(../img/mail-reply-sender-16.png) no-repeat 8px 0;
+        background: url(images/mail-reply-sender-16.png) no-repeat 8px 0;
     }
     .msg-actions a.replyall {
         padding-left: 28px;
-        background: url(../img/mail-reply-all-16.png) no-repeat 8px 0;
+        background: url(images/mail-reply-all-16.png) no-repeat 8px 0;
     }
     .msg-actions a.forward {
         padding-left: 28px;
-        background: url(../img/mail-forward-16.png) no-repeat 8px 0;
+        background: url(images/mail-forward-16.png) no-repeat 8px 0;
     }
 
     .msg-actions a:hover {
@@ -277,7 +277,7 @@
         }
         .msg .msg-content > .msg-attachments { 
             /*
-            background: transparent url(../img/grad.png) repeat-x top;
+            background: transparent url(images/grad.png) repeat-x top;
             */
         }
 

@@ -5,6 +5,16 @@ get '/' do
   haml :index
 end
 
-get '/admin/' do
+get '/admin/agents' do
   haml :index
 end
+
+# get '/css/layout.css' do
+#   content_type 'text/css', :charset => 'utf-8'
+#   css :stylesheet
+# end
+# 
+# get '/css/login.css' do
+#   content_type 'text/css', :charset => 'utf-8'
+#   css :stylesheet
+# end

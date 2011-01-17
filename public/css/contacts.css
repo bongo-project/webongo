@@ -62,11 +62,11 @@ td.contact-pic {
 }
 
 #contact-view.editing .type-label {
-    background: transparent url(../img/arrow.png) right no-repeat;
+    background: transparent url(images/arrow.png) right no-repeat;
 }
 
 #contact-view.editing .type-label:hover {
-    background: transparent url(../img/arrow.png) right no-repeat;
+    background: transparent url(images/arrow.png) right no-repeat;
     background-color: #e4ebf3;
     /* color: #f1f5f9; */
     border-color: #d8e1ed;
@@ -142,12 +142,12 @@ td.contact-pic {
 }
 
 #contact-view.editing .contact-field .del-field { 
-  background-image: url(../img/minus.png);
+  background-image: url(images/minus.png);
   visibility: visible;
 }
 
 #contact-view.editing .contact-field .add-field {
-  background-image: url(../img/plus.png);
+  background-image: url(images/plus.png);
   visibility: hidden;
 }
 
